@@ -7,19 +7,45 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="custom-cursor"></div>
     <div id="content">
-      <div id="box-projects">
+      <div id="box-projects" class="box" onclick="scrollToSection('projects-section')">
         <h1>projects</h1>
       </div>
-      <div id="box-about">
+      <div id="box-about" class="box" onclick="scrollToSection('about-section')">
         <h1>reazn</h1>
       </div>
-      <div id="box-lastfm">
+      <div id="box-lastfm" class="box" onclick="scrollToSection('music-section')">
         <h1>music</h1>
       </div>
       <div id="box-links">
-        <h1>links</h1>
+        <a href="https://github.com/reazn" class="github-link">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        </a>
       </div>
     </div>
+
+    <section id="about-section" class="content-section">
+      <h2>About Me</h2>
+      <div class="section-content content-wrapper">
+        <!-- Add your about content here -->
+      </div>
+    </section>
+
+    <section id="projects-section" class="content-section">
+      <h2>Projects</h2>
+      <div class="section-content content-wrapper">
+        <!-- Add your projects content here -->
+      </div>
+    </section>
+
+    <section id="music-section" class="content-section">
+      <h2>Music</h2>
+      <div class="section-content content-wrapper">
+        <!-- Add your music content here -->
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>

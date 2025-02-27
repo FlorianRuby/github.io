@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Nikkey';
+    src: url('/assets/fonts/PPNikkeiJournal-Ultrabold.woff2') format('woff2'),
+         url('/assets/fonts/PPNikkeiJournal-Ultrabold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
 :root {
     --background-color: #ECE9EC;
     --box-color: #DCDCE1;
@@ -6,11 +14,11 @@
 #content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    grid-template-rows: repeat(20, 1fr);
     gap: 1rem;
     padding: 1rem 2rem;
     max-width: 1400px;
-    margin: 5rem auto;
+    margin: 0 auto;
     min-height: 100vh;
 }
 
@@ -18,7 +26,7 @@
 #box-projects {
     background-color: var(--box-color);
     grid-column: 2 / 7;
-    grid-row: 1 / 6;
+    grid-row: 2 / 7;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
@@ -27,7 +35,7 @@
 #box-about {
     background-color: var(--box-color);
     grid-column: 7 / 12;
-    grid-row: 1 / 12;
+    grid-row: 2 / 13;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
@@ -36,7 +44,7 @@
 #box-lastfm {
     background-color: var(--box-color);
     grid-column: 2 / 7;
-    grid-row: 6 / 15;
+    grid-row: 7 / 18;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
@@ -45,13 +53,17 @@
 #box-links {
     background-color: var(--box-color);
     grid-column: 7 / 12;
-    grid-row: 12 / 15;
+    grid-row: 13 / 18;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
+    font-family: 'Nikkey', sans-serif;
     margin: 0;
     font-size: 1.5rem;
     color: #333;
@@ -66,6 +78,95 @@ h1 {
 }
 
 body {
-    font-family: Helvetica, sans-serif -apple-system, sans-serif;
+    font-family: 'Nikkey', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
     background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+.github-link img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.2s ease;
+}
+
+.github-link:hover img {
+    transform: scale(1.1);
+}
+
+.box {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.box:hover {
+    opacity: 0.9;
+}
+
+.content-section {
+    min-height: 100vh;
+    padding: 4rem 0;
+    width: calc((10 / 12) * 100%);
+    max-width: calc((10 / 12) * 1400px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+}
+
+.content-section h2 {
+    grid-column: 1 / -1;
+    font-family: 'Nikkey', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.section-content {
+    grid-column: 1 / -1;
+    background-color: var(--box-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    min-height: 60vh;
+}
+
+.custom-cursor {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(180, 180, 185, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.1s ease, left 0.05s linear, top 0.05s linear;
+    transform: translate(-50%, 20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-cursor::after {
+    content: '↓';
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+}
+
+.custom-cursor.active {
+    opacity: 1;
+}
+
+.content-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.content-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
