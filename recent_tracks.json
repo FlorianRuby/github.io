@@ -1,6 +1,653 @@
 [
   {
     "artist": {
+      "mbid": "4e4ebde4-0c56-4dec-844b-6c73adcdd92d",
+      "#text": "Juice WRLD"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/f0f709b9b244d9e251c4637639484198.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/f0f709b9b244d9e251c4637639484198.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/f0f709b9b244d9e251c4637639484198.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/f0f709b9b244d9e251c4637639484198.jpg"
+      }
+    ],
+    "mbid": "0a198d19-63ad-4114-93a4-f7a06317d710",
+    "album": {
+      "mbid": "06ab1dda-2a7b-47a1-8370-000d961b1677",
+      "#text": "Righteous"
+    },
+    "name": "Righteous",
+    "@attr": {
+      "nowplaying": "true"
+    },
+    "url": "https://www.last.fm/music/Juice+WRLD/_/Righteous"
+  },
+  {
+    "artist": {
+      "mbid": "f6beac20-5dfe-4d1f-ae02-0b0a740aafd6",
+      "#text": "Tyler, the Creator"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
+      }
+    ],
+    "mbid": "ef69368d-90c0-42d0-b1b7-ab2afa21ca01",
+    "album": {
+      "mbid": "e41ee68e-eb4a-4ea6-9dbd-e9d0b9d72712",
+      "#text": "Chromakopia"
+    },
+    "name": "Balloon (Feat. Doechii)",
+    "url": "https://www.last.fm/music/Tyler,+the+Creator/_/Balloon+(Feat.+Doechii)",
+    "date": {
+      "uts": "1740693116",
+      "#text": "27 Feb 2025, 21:51"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "c2a41668-983f-4f73-af00-45000a252811",
+      "#text": "Paris Texas"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/d4f0bde9a645a3a34dba90c34da0bc4a.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/d4f0bde9a645a3a34dba90c34da0bc4a.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/d4f0bde9a645a3a34dba90c34da0bc4a.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/d4f0bde9a645a3a34dba90c34da0bc4a.jpg"
+      }
+    ],
+    "mbid": "62e5565a-31c0-4b8e-9c90-f4501434552f",
+    "album": {
+      "mbid": "3b15d8f4-10aa-4b45-9bca-cc0e41d6ed51",
+      "#text": "They Left Me With The Sword"
+    },
+    "name": "Holy Spinal Fluid",
+    "url": "https://www.last.fm/music/Paris+Texas/_/Holy+Spinal+Fluid",
+    "date": {
+      "uts": "1740692939",
+      "#text": "27 Feb 2025, 21:48"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "",
+      "#text": "midwxst archive"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/81cb71d12d1600f1eff3207e69a847b2.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/81cb71d12d1600f1eff3207e69a847b2.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/81cb71d12d1600f1eff3207e69a847b2.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/81cb71d12d1600f1eff3207e69a847b2.jpg"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "run"
+    },
+    "name": "run",
+    "url": "https://www.last.fm/music/midwxst+archive/_/run",
+    "date": {
+      "uts": "1740692766",
+      "#text": "27 Feb 2025, 21:46"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "f6beac20-5dfe-4d1f-ae02-0b0a740aafd6",
+      "#text": "Tyler, the Creator"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/64049f1cdc35c0ef618842dcfcbb05f7.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/64049f1cdc35c0ef618842dcfcbb05f7.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/64049f1cdc35c0ef618842dcfcbb05f7.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/64049f1cdc35c0ef618842dcfcbb05f7.jpg"
+      }
+    ],
+    "mbid": "bf69d97a-64c1-4730-9895-a3d7ada35f27",
+    "album": {
+      "mbid": "3967ce43-8c5f-4013-9422-58f9e0ee0a14",
+      "#text": "BEST INTEREST"
+    },
+    "name": "BEST INTEREST",
+    "url": "https://www.last.fm/music/Tyler,+the+Creator/_/BEST+INTEREST",
+    "date": {
+      "uts": "1740692636",
+      "#text": "27 Feb 2025, 21:43"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+      "#text": "beabadoobee"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/669643b4222b2bda6f29c2f6aec9cc20.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/669643b4222b2bda6f29c2f6aec9cc20.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/669643b4222b2bda6f29c2f6aec9cc20.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/669643b4222b2bda6f29c2f6aec9cc20.jpg"
+      }
+    ],
+    "mbid": "94bfbea6-cc31-4791-8111-b0c18c6ce395",
+    "album": {
+      "mbid": "ee281a3c-9651-4c0a-a593-cf58153b3af5",
+      "#text": "take a bite"
+    },
+    "name": "take a bite",
+    "url": "https://www.last.fm/music/beabadoobee/_/take+a+bite",
+    "date": {
+      "uts": "1740692477",
+      "#text": "27 Feb 2025, 21:41"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+      "#text": "The Beatles"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/1ac1b27a691107b32b1eabee93481fbc.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/1ac1b27a691107b32b1eabee93481fbc.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/1ac1b27a691107b32b1eabee93481fbc.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/1ac1b27a691107b32b1eabee93481fbc.png"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "Revolver (Remastered)"
+    },
+    "name": "Eleanor Rigby - Remastered 2009",
+    "url": "https://www.last.fm/music/The+Beatles/_/Eleanor+Rigby+-+Remastered+2009",
+    "date": {
+      "uts": "1740692351",
+      "#text": "27 Feb 2025, 21:39"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "80e8e55c-6e9b-470f-844b-48e618fb6e56",
+      "#text": "Ufo361"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/9226473f859b84e53db0c7c3c734605c.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/9226473f859b84e53db0c7c3c734605c.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/9226473f859b84e53db0c7c3c734605c.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/9226473f859b84e53db0c7c3c734605c.jpg"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "RICK OWENS (feat. Ken Carson)"
+    },
+    "name": "Rick Owens (feat. Ken Carson)",
+    "url": "https://www.last.fm/music/Ufo361/_/Rick+Owens+(feat.+Ken+Carson)",
+    "date": {
+      "uts": "1740692219",
+      "#text": "27 Feb 2025, 21:36"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "",
+      "#text": "d4vd"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "Unreleased d4vd"
+    },
+    "name": "Say It Back",
+    "url": "https://www.last.fm/music/d4vd/_/Say+It+Back",
+    "date": {
+      "uts": "1740692051",
+      "#text": "27 Feb 2025, 21:34"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "",
+      "#text": "Kanye West"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/32f2b94ebebb2742709006790b9209b9.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/32f2b94ebebb2742709006790b9209b9.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/32f2b94ebebb2742709006790b9209b9.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/32f2b94ebebb2742709006790b9209b9.png"
+      }
+    ],
+    "mbid": "d883034e-a252-44f6-848c-ae841f0cc42c",
+    "album": {
+      "mbid": "23883c62-18b7-407b-a8d1-2c66cb58fb7a",
+      "#text": "Donda"
+    },
+    "name": "Pure Souls",
+    "url": "https://www.last.fm/music/Kanye+West/_/Pure+Souls",
+    "date": {
+      "uts": "1740691693",
+      "#text": "27 Feb 2025, 21:28"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "8264722b-df00-467a-858e-5c97cda169c9",
+      "#text": "Joji"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/6f2784172913db6982b2f6de18b837f6.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/6f2784172913db6982b2f6de18b837f6.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/6f2784172913db6982b2f6de18b837f6.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/6f2784172913db6982b2f6de18b837f6.jpg"
+      }
+    ],
+    "mbid": "57c319d6-31ed-4668-acf1-13350ab8b67b",
+    "album": {
+      "mbid": "e26e8cbc-db4c-422a-a171-f0080a142c88",
+      "#text": "SMITHEREENS"
+    },
+    "name": "Glimpse of Us",
+    "url": "https://www.last.fm/music/Joji/_/Glimpse+of+Us",
+    "date": {
+      "uts": "1740691460",
+      "#text": "27 Feb 2025, 21:24"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "6f500293-7396-4903-b4fd-118127d06f9e",
+      "#text": "RADWIMPS"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/07cb9db6a308029d489c3af2c9fc5847.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/07cb9db6a308029d489c3af2c9fc5847.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/07cb9db6a308029d489c3af2c9fc5847.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/07cb9db6a308029d489c3af2c9fc5847.jpg"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "1f0569d4-2186-4317-8374-11e5a96afe13",
+      "#text": "your name."
+    },
+    "name": "Sparkle - movie ver.",
+    "url": "https://www.last.fm/music/RADWIMPS/_/Sparkle+-+movie+ver.",
+    "date": {
+      "uts": "1740691020",
+      "#text": "27 Feb 2025, 21:17"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "",
+      "#text": "TTYL"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "Dramatic Summer (Speed Edition) [Sped Up]"
+    },
+    "name": "Knew a Girl - Sped Up",
+    "url": "https://www.last.fm/music/TTYL/_/Knew+a+Girl+-+Sped+Up",
+    "date": {
+      "uts": "1740690906",
+      "#text": "27 Feb 2025, 21:15"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "381086ea-f511-4aba-bdf9-71c753dc5077",
+      "#text": "Kendrick Lamar"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/a79564a9768d05272682b252deb02079.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/a79564a9768d05272682b252deb02079.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/a79564a9768d05272682b252deb02079.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/a79564a9768d05272682b252deb02079.png"
+      }
+    ],
+    "mbid": "45c59cf4-4399-4c0d-8423-7fc90f278727",
+    "album": {
+      "mbid": "45bbde2e-bfc1-48c6-8b58-491348cd5459",
+      "#text": "GNX"
+    },
+    "name": "gloria (with SZA)",
+    "url": "https://www.last.fm/music/Kendrick+Lamar/_/gloria+(with+SZA)",
+    "date": {
+      "uts": "1740690618",
+      "#text": "27 Feb 2025, 21:10"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "",
+      "#text": "Dro Kenji"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/4cc1a40623160213599ceaa1e6ec8d21.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/4cc1a40623160213599ceaa1e6ec8d21.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/4cc1a40623160213599ceaa1e6ec8d21.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/4cc1a40623160213599ceaa1e6ec8d21.jpg"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "WISH YOU WERE HERE"
+    },
+    "name": "PICKING BATTLES",
+    "url": "https://www.last.fm/music/Dro+Kenji/_/PICKING+BATTLES",
+    "date": {
+      "uts": "1740690434",
+      "#text": "27 Feb 2025, 21:07"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "c485632c-b784-4ee9-8ea1-c5fb365681fc",
+      "#text": "MGMT"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/32774a8d1143a4a7087f4a18d5e2ede2.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/32774a8d1143a4a7087f4a18d5e2ede2.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/32774a8d1143a4a7087f4a18d5e2ede2.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/32774a8d1143a4a7087f4a18d5e2ede2.png"
+      }
+    ],
+    "mbid": "05a97660-91d2-330e-9f25-95d77d698aa3",
+    "album": {
+      "mbid": "25a366e1-24fc-4e4a-a4d7-3370cb662568",
+      "#text": "Oracular Spectacular"
+    },
+    "name": "Weekend Wars",
+    "url": "https://www.last.fm/music/MGMT/_/Weekend+Wars",
+    "date": {
+      "uts": "1740690185",
+      "#text": "27 Feb 2025, 21:03"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "27acebf2-5440-42a7-9db6-19ad2c9dea38",
+      "#text": "Bronski Beat"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/d5afb2c117332007ab9b2352d31173fd.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/d5afb2c117332007ab9b2352d31173fd.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/d5afb2c117332007ab9b2352d31173fd.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/d5afb2c117332007ab9b2352d31173fd.jpg"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "09cf49be-972e-4280-a9ed-484c67a70374",
+      "#text": "The Age of Consent"
+    },
+    "name": "Smalltown Boy",
+    "url": "https://www.last.fm/music/Bronski+Beat/_/Smalltown+Boy",
+    "date": {
+      "uts": "1740689819",
+      "#text": "27 Feb 2025, 20:56"
+    }
+  },
+  {
+    "artist": {
+      "mbid": "",
+      "#text": "d4vd"
+    },
+    "streamable": "0",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "large",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+      }
+    ],
+    "mbid": "",
+    "album": {
+      "mbid": "",
+      "#text": "Unreleased d4vd"
+    },
+    "name": "goshdarnpretti",
+    "url": "https://www.last.fm/music/d4vd/_/goshdarnpretti",
+    "date": {
+      "uts": "1740689668",
+      "#text": "27 Feb 2025, 20:54"
+    }
+  },
+  {
+    "artist": {
       "mbid": "6f500293-7396-4903-b4fd-118127d06f9e",
       "#text": "RADWIMPS"
     },
@@ -2985,618 +3632,6 @@
     "date": {
       "uts": "1740633557",
       "#text": "27 Feb 2025, 05:19"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Zartmann"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/b5dc4ee8b4ef2bb1ad0f054dfc61e232.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/b5dc4ee8b4ef2bb1ad0f054dfc61e232.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/b5dc4ee8b4ef2bb1ad0f054dfc61e232.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/b5dc4ee8b4ef2bb1ad0f054dfc61e232.jpg"
-      }
-    ],
-    "mbid": "19b8203f-e21d-464b-9008-da519f0c8f71",
-    "album": {
-      "mbid": "",
-      "#text": "dafür bin ich frei EP"
-    },
-    "name": "und du suchst noch überall, alles was mal von mir war",
-    "url": "https://www.last.fm/music/Zartmann/_/und+du+suchst+noch+%C3%BCberall,+alles+was+mal+von+mir+war",
-    "date": {
-      "uts": "1740633375",
-      "#text": "27 Feb 2025, 05:16"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "a0e8a1b1-5f8f-475a-a253-17415c17d0ff",
-      "#text": "Mac Miller"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/9f0e333c941c1a0147fc5d347d343e6d.png"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/9f0e333c941c1a0147fc5d347d343e6d.png"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/9f0e333c941c1a0147fc5d347d343e6d.png"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/9f0e333c941c1a0147fc5d347d343e6d.png"
-      }
-    ],
-    "mbid": "07034ea3-e18e-4e90-92fd-951b9c0dc60f",
-    "album": {
-      "mbid": "62bd84b5-1c38-4d27-9176-ea0716d51064",
-      "#text": "Swimming"
-    },
-    "name": "So It Goes",
-    "url": "https://www.last.fm/music/Mac+Miller/_/So+It+Goes",
-    "date": {
-      "uts": "1740633063",
-      "#text": "27 Feb 2025, 05:11"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "f6beac20-5dfe-4d1f-ae02-0b0a740aafd6",
-      "#text": "Tyler, the Creator"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
-      }
-    ],
-    "mbid": "7c00a0c7-5d1e-459f-939b-0c434b509976",
-    "album": {
-      "mbid": "e41ee68e-eb4a-4ea6-9dbd-e9d0b9d72712",
-      "#text": "Chromakopia"
-    },
-    "name": "I Hope You Find Your Way Home",
-    "url": "https://www.last.fm/music/Tyler,+the+Creator/_/I+Hope+You+Find+Your+Way+Home",
-    "date": {
-      "uts": "1740632855",
-      "#text": "27 Feb 2025, 05:07"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "201412c6-7ced-472b-87a9-9259ec3c07d3",
-      "#text": "Brent Faiyaz"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/74c7c0622904c1fdf629bc307952ccc4.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/74c7c0622904c1fdf629bc307952ccc4.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/74c7c0622904c1fdf629bc307952ccc4.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/74c7c0622904c1fdf629bc307952ccc4.jpg"
-      }
-    ],
-    "mbid": "85e6f53d-b8af-48cd-b245-bdc9951c8a21",
-    "album": {
-      "mbid": "95fb59ed-1ece-419b-b62f-aef31e0ebf36",
-      "#text": "WASTELAND"
-    },
-    "name": "All Mine",
-    "url": "https://www.last.fm/music/Brent+Faiyaz/_/All+Mine",
-    "date": {
-      "uts": "1740604830",
-      "#text": "26 Feb 2025, 21:20"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Kanye West"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/8c6af1315c66631bad022085c7992b34.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/8c6af1315c66631bad022085c7992b34.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/8c6af1315c66631bad022085c7992b34.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/8c6af1315c66631bad022085c7992b34.jpg"
-      }
-    ],
-    "mbid": "23e2245c-25ad-4746-9c5a-eab7b5181026",
-    "album": {
-      "mbid": "03f03619-385a-4ed9-9974-cdcdf6404cf5",
-      "#text": "The Life of Pablo"
-    },
-    "name": "Wolves",
-    "url": "https://www.last.fm/music/Kanye+West/_/Wolves",
-    "date": {
-      "uts": "1740604528",
-      "#text": "26 Feb 2025, 21:15"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "201412c6-7ced-472b-87a9-9259ec3c07d3",
-      "#text": "Brent Faiyaz"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/55d67ee97f2051afc325f4c19e42c728.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/55d67ee97f2051afc325f4c19e42c728.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/55d67ee97f2051afc325f4c19e42c728.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/55d67ee97f2051afc325f4c19e42c728.jpg"
-      }
-    ],
-    "mbid": "ef80404d-35db-44c3-9d27-371aeba4d6fc",
-    "album": {
-      "mbid": "409a9e55-9fba-47f1-9eb8-c3a01c1df0e1",
-      "#text": "Larger Than Life"
-    },
-    "name": "Best Time",
-    "url": "https://www.last.fm/music/Brent+Faiyaz/_/Best+Time",
-    "date": {
-      "uts": "1740604445",
-      "#text": "26 Feb 2025, 21:14"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "4e4ebde4-0c56-4dec-844b-6c73adcdd92d",
-      "#text": "Juice WRLD"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/cfb4a4c8ed2c9ae98ed33449a77a97cb.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/cfb4a4c8ed2c9ae98ed33449a77a97cb.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/cfb4a4c8ed2c9ae98ed33449a77a97cb.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/cfb4a4c8ed2c9ae98ed33449a77a97cb.jpg"
-      }
-    ],
-    "mbid": "7d02c105-44c1-4603-a01b-8c59c43ce93c",
-    "album": {
-      "mbid": "8593cb4d-5519-43d2-9097-b1c8dcc1b036",
-      "#text": "The Party Never Ends"
-    },
-    "name": "AGATS2 (Insecure) [with Nicki Minaj]",
-    "url": "https://www.last.fm/music/Juice+WRLD/_/AGATS2+(Insecure)+%5Bwith+Nicki+Minaj%5D",
-    "date": {
-      "uts": "1740604245",
-      "#text": "26 Feb 2025, 21:10"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Kino"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/39eefd2dd98f4bd340d4f170501f2e9b.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/39eefd2dd98f4bd340d4f170501f2e9b.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/39eefd2dd98f4bd340d4f170501f2e9b.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/39eefd2dd98f4bd340d4f170501f2e9b.jpg"
-      }
-    ],
-    "mbid": "",
-    "album": {
-      "mbid": "",
-      "#text": "Группа крови"
-    },
-    "name": "Группа крови",
-    "url": "https://www.last.fm/music/Kino/_/%D0%93%D1%80%D1%83%D0%BF%D0%BF%D0%B0+%D0%BA%D1%80%D0%BE%D0%B2%D0%B8",
-    "date": {
-      "uts": "1740603962",
-      "#text": "26 Feb 2025, 21:06"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Beach Weather"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/9978aa28acac60f367192ce5b08ec8a2.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/9978aa28acac60f367192ce5b08ec8a2.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/9978aa28acac60f367192ce5b08ec8a2.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/9978aa28acac60f367192ce5b08ec8a2.jpg"
-      }
-    ],
-    "mbid": "16195dbc-5de2-4669-82d0-a908b6e1be36",
-    "album": {
-      "mbid": "05bb78f6-81ea-481b-b45b-76c67e7a178b",
-      "#text": "Chit Chat"
-    },
-    "name": "Sex, Drugs, Etc.",
-    "url": "https://www.last.fm/music/Beach+Weather/_/Sex,+Drugs,+Etc.",
-    "date": {
-      "uts": "1740603738",
-      "#text": "26 Feb 2025, 21:02"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Kanye West"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/8c6af1315c66631bad022085c7992b34.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/8c6af1315c66631bad022085c7992b34.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/8c6af1315c66631bad022085c7992b34.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/8c6af1315c66631bad022085c7992b34.jpg"
-      }
-    ],
-    "mbid": "f1458e00-4d1f-4740-b6e9-a845d08572f9",
-    "album": {
-      "mbid": "03f03619-385a-4ed9-9974-cdcdf6404cf5",
-      "#text": "The Life of Pablo"
-    },
-    "name": "Saint Pablo",
-    "url": "https://www.last.fm/music/Kanye+West/_/Saint+Pablo",
-    "date": {
-      "uts": "1740603365",
-      "#text": "26 Feb 2025, 20:56"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "TTYL"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
-      }
-    ],
-    "mbid": "",
-    "album": {
-      "mbid": "",
-      "#text": "Dancing In The Heat"
-    },
-    "name": "Blue Eyes",
-    "url": "https://www.last.fm/music/TTYL/_/Blue+Eyes",
-    "date": {
-      "uts": "1740603163",
-      "#text": "26 Feb 2025, 20:52"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Kanye West"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/51e9b77a991331b154d61d5749842fa1.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/51e9b77a991331b154d61d5749842fa1.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/51e9b77a991331b154d61d5749842fa1.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/51e9b77a991331b154d61d5749842fa1.jpg"
-      }
-    ],
-    "mbid": "4b5506ed-ae9e-4059-8fc6-c3a8e9dd9c61",
-    "album": {
-      "mbid": "09aa7622-b935-48bc-834b-495040a74ff3",
-      "#text": "ye"
-    },
-    "name": "Violent Crimes",
-    "url": "https://www.last.fm/music/Kanye+West/_/Violent+Crimes",
-    "date": {
-      "uts": "1740602947",
-      "#text": "26 Feb 2025, 20:49"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "25ab7547-a4d2-480b-b028-c7f3497bc858",
-      "#text": "Men I Trust"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/cbc148557dffcf0f462bf1c84671c683.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/cbc148557dffcf0f462bf1c84671c683.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/cbc148557dffcf0f462bf1c84671c683.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/cbc148557dffcf0f462bf1c84671c683.jpg"
-      }
-    ],
-    "mbid": "1f8b68f0-7849-47cf-961c-7cca7fbf9fcb",
-    "album": {
-      "mbid": "2c95ff49-9695-4fc8-9fb2-bd985800c7f9",
-      "#text": "Show Me How"
-    },
-    "name": "Show Me How",
-    "url": "https://www.last.fm/music/Men+I+Trust/_/Show+Me+How",
-    "date": {
-      "uts": "1740602731",
-      "#text": "26 Feb 2025, 20:45"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "90b5813d-fbd7-4539-89d5-034094f64a2e",
-      "#text": "The Chills"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/ed0d77d2d6e543dfc3b43bd19fef7cd5.png"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/ed0d77d2d6e543dfc3b43bd19fef7cd5.png"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/ed0d77d2d6e543dfc3b43bd19fef7cd5.png"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/ed0d77d2d6e543dfc3b43bd19fef7cd5.png"
-      }
-    ],
-    "mbid": "10584046-da30-3667-880b-c718d596ac66",
-    "album": {
-      "mbid": "29ef2e4a-3f51-45b4-9578-e1ca344b54f9",
-      "#text": "Late Night Tales: MGMT"
-    },
-    "name": "Pink Frost",
-    "url": "https://www.last.fm/music/The+Chills/_/Pink+Frost",
-    "date": {
-      "uts": "1740602495",
-      "#text": "26 Feb 2025, 20:41"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "2a84c169-7bcf-406c-b7bc-a079d648812f",
-      "#text": "T-Low"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/433f068b759c6500620d552ebd3b5d30.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/433f068b759c6500620d552ebd3b5d30.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/433f068b759c6500620d552ebd3b5d30.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/433f068b759c6500620d552ebd3b5d30.jpg"
-      }
-    ],
-    "mbid": "",
-    "album": {
-      "mbid": "",
-      "#text": "Paranoid"
-    },
-    "name": "Paranoid",
-    "url": "https://www.last.fm/music/T-Low/_/Paranoid",
-    "date": {
-      "uts": "1740602327",
-      "#text": "26 Feb 2025, 20:38"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "",
-      "#text": "Kanye West"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/8ddd1959a2bef460a5149b3e0cf5e18a.png"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/8ddd1959a2bef460a5149b3e0cf5e18a.png"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/8ddd1959a2bef460a5149b3e0cf5e18a.png"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/8ddd1959a2bef460a5149b3e0cf5e18a.png"
-      }
-    ],
-    "mbid": "0f83f4c4-ae89-3d41-8d0f-ebc7a9b97117",
-    "album": {
-      "mbid": "06a81817-093d-40f0-aef2-90673fa550ae",
-      "#text": "Graduation"
-    },
-    "name": "Champion",
-    "url": "https://www.last.fm/music/Kanye+West/_/Champion",
-    "date": {
-      "uts": "1740602160",
-      "#text": "26 Feb 2025, 20:36"
-    }
-  },
-  {
-    "artist": {
-      "mbid": "d8e07579-ff5a-41f2-b7a7-c71880b8287a",
-      "#text": "d4vd"
-    },
-    "streamable": "0",
-    "image": [
-      {
-        "size": "small",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/34s/1b1d95c32cf8508b25eb44072be69ad7.jpg"
-      },
-      {
-        "size": "medium",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/64s/1b1d95c32cf8508b25eb44072be69ad7.jpg"
-      },
-      {
-        "size": "large",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/174s/1b1d95c32cf8508b25eb44072be69ad7.jpg"
-      },
-      {
-        "size": "extralarge",
-        "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/1b1d95c32cf8508b25eb44072be69ad7.jpg"
-      }
-    ],
-    "mbid": "9804513d-1463-47f9-a10b-6407b38a4c1b",
-    "album": {
-      "mbid": "df7caaa8-27f0-41a6-b38d-900afc1e57f9",
-      "#text": "One More Dance"
-    },
-    "name": "One More Dance",
-    "url": "https://www.last.fm/music/d4vd/_/One+More+Dance",
-    "date": {
-      "uts": "1740601970",
-      "#text": "26 Feb 2025, 20:32"
     }
   }
 ]

@@ -47,7 +47,7 @@
     grid-row: 7 / 18;
     border-radius: 0.5rem;
     padding: 1.5rem;
-    text-align: center;
+    text-align: left;
 }
 
 #box-links {
@@ -217,7 +217,7 @@ body {
     background-color: var(--box-color);
     border-radius: 0.5rem;
     padding: 0.75rem;
-    text-align: center;
+    text-align: left;
 }
 
 #music-stats h3 {
@@ -235,4 +235,11 @@ body {
     margin-bottom: 0.25rem;
     width: 50px;
     height: 50px;
+}
+
+#playsChart {
+    max-width: 400px;
+    max-height: 200px;
+    width: 100%;
+    height: auto;
 }

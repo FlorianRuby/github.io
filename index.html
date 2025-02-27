@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="custom-cursor"></div>
@@ -21,6 +22,8 @@
         <div id="top-track"></div>
         <div id="top-artist"></div>
         <div id="top-album"></div>
+        <canvas id="playsChart" width="250" height="100" style="max-width: 400px; width: 100%; max-height: 200px;"></canvas>
+
       </div>
       
       <div id="box-links">
@@ -66,5 +69,6 @@
     </section>
 
     <script src="script.js"></script>
+    <script src="chart.js"></script>
   </body>
 </html>

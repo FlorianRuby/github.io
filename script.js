@@ -61,15 +61,15 @@ async function displayMusicStats() {
         const recentData = await recentResponse.json();
         const recentTrack = recentData.recenttracks.track[0];
 
-        // Display the most recent track
+        // Display the most recent track without play count
         document.getElementById('recent-track').innerHTML = `
             <h4>Most Recent Track</h4>
             <img src="${recentTrack.image[2]['#text']}" alt="${recentTrack.name}" style="border-radius: 50%; width: 50px; height: 50px;">
             <p>${recentTrack.name} by ${recentTrack.artist['#text']}</p>
         `;
 
-        // Fetch the rest of the data from recent_tracks.json
-        const tracksResponse = await fetch('recent_tracks.json');
+        // Fetch the last week's data from last_week_tracks.json
+        const tracksResponse = await fetch('last_week_tracks.json');
         const tracks = await tracksResponse.json();
 
         // Determine top track, artist, and album
@@ -93,20 +93,20 @@ async function displayMusicStats() {
         const topArtist = Object.keys(artistCounts).reduce((a, b) => artistCounts[a] > artistCounts[b] ? a : b);
         const topAlbum = Object.keys(albumCounts).reduce((a, b) => albumCounts[a] > albumCounts[b] ? a : b);
 
-        // Display top track, artist, and album
+        // Display top track, artist, and album with play counts
         document.getElementById('top-track').innerHTML = `
             <h4>Top Track This Month</h4>
-            <p>${topTrack}</p>
+            <p>${topTrack} - ${trackCounts[topTrack]} plays</p>
         `;
 
         document.getElementById('top-artist').innerHTML = `
             <h4>Top Artist This Month</h4>
-            <p>${topArtist}</p>
+            <p>${topArtist} - ${artistCounts[topArtist]} plays</p>
         `;
 
         document.getElementById('top-album').innerHTML = `
             <h4>Top Album This Month</h4>
-            <p>${topAlbum}</p>
+            <p>${topAlbum} - ${albumCounts[topAlbum]} plays</p>
         `;
     } catch (error) {
         console.error('Error fetching music stats:', error);
