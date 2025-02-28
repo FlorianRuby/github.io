@@ -14,21 +14,27 @@
         <h1>projects</h1>
       </div>
       <div id="box-about" class="box" onclick="scrollToSection('about-section')">
-        <h1>reazn</h1>
+        <h1><img src="https://em-content.zobj.net/source/apple/354/waving-hand_1f44b.png" class="wave" alt="👋"> Hi I'm reazn</h1>
+        <p class="about-text">I'm a 17 year old computer science student and avid music enjoyer. <br>I love creating websites for personal use and experimenting with new technologies. <br><br> In my spare time I dabble in photography, graphic design and editing.</p>
+
       </div>
       <div id="box-lastfm" class="box" onclick="scrollToSection('music-section')">
-        <h1>music</h1>
-        <div id="recent-track"></div>
-        <div id="top-track"></div>
-        <div id="top-artist"></div>
-        <div id="top-album"></div>
-        <canvas id="playsChart" width="250" height="100" style="max-width: 400px; width: 100%; max-height: 200px;"></canvas>
-
+        <h1>My listening habits</h1>
+        <div id="music-stats">
+          <div id="recent-track"></div>
+          <div id="top-track"></div>
+          <div id="top-artist"></div>
+          <div id="top-album"></div>
+        </div>
+        <canvas id="playsChart" width="250" height="100" style="max-width: 400px; width: 100%; max-height: 200px; margin-bottom: 20px;"></canvas>
       </div>
       
       <div id="box-links">
         <a href="https://github.com/florianruby" class="github-link">
           github
+        </a>
+        <a href="https://www.linkedin.com/in/florian-ruby-63478a353/" class="ln-link">
+          linkedin
         </a>
       </div>
       <div id="cv-download">
@@ -37,13 +43,6 @@
         </a>
       </div>
     </div>
-
-    <section id="about-section" class="content-section">
-      <h2>About Me</h2>
-      <div class="section-content content-wrapper">
-        <!-- Add your about content here -->
-      </div>
-    </section>
 
     <section id="projects-section" class="content-section">
       <h2>Projects</h2>
@@ -56,15 +55,14 @@
       <h2>Music</h2>
       <div class="section-content content-wrapper">
         <div id="box-lastfm" class="box" onclick="scrollToSection('music-section')">
-          <h1>music</h1>
-          <div id="music-stats">
-            <h3>Music Stats</h3>
-            <div id="recent-track"></div>
-            <div id="top-track"></div>
-            <div id="top-artist"></div>
-            <div id="top-album"></div>
-          </div>
+
         </div>
+      </div>
+    </section>
+
+    <section id="about-section" class="content-section">
+      <h2>About Me</h2>
+      <div class="section-content content-wrapper">
       </div>
     </section>
 

@@ -61,11 +61,13 @@ async function displayMusicStats() {
         const recentData = await recentResponse.json();
         const recentTrack = recentData.recenttracks.track[0];
 
-        // Display the most recent track without play count
+        // Display the most recent track with cover image next to the song name
         document.getElementById('recent-track').innerHTML = `
             <h4>Most Recent Track</h4>
-            <img src="${recentTrack.image[2]['#text']}" alt="${recentTrack.name}" style="border-radius: 50%; width: 50px; height: 50px;">
-            <p>${recentTrack.name} by ${recentTrack.artist['#text']}</p>
+            <div style="display: flex; align-items: center;">
+                <img src="${recentTrack.image[2]['#text']}" alt="${recentTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                <p>${recentTrack.name} by ${recentTrack.artist['#text']}</p>
+            </div>
         `;
 
         // Fetch the last week's data from last_week_tracks.json
@@ -93,20 +95,12 @@ async function displayMusicStats() {
         const topArtist = Object.keys(artistCounts).reduce((a, b) => artistCounts[a] > artistCounts[b] ? a : b);
         const topAlbum = Object.keys(albumCounts).reduce((a, b) => albumCounts[a] > albumCounts[b] ? a : b);
 
-        // Display top track, artist, and album with play counts
+        // Display monthly music stats header
         document.getElementById('top-track').innerHTML = `
-            <h4>Top Track This Month</h4>
-            <p>${topTrack} - ${trackCounts[topTrack]} plays</p>
-        `;
-
-        document.getElementById('top-artist').innerHTML = `
-            <h4>Top Artist This Month</h4>
-            <p>${topArtist} - ${artistCounts[topArtist]} plays</p>
-        `;
-
-        document.getElementById('top-album').innerHTML = `
-            <h4>Top Album This Month</h4>
-            <p>${topAlbum} - ${albumCounts[topAlbum]} plays</p>
+            <h4>Monthly Music Stats</h4>
+            <p>Top Track: ${topTrack} - ${trackCounts[topTrack]} plays</p>
+            <p>Top Artist: ${topArtist} - ${artistCounts[topArtist]} plays</p>
+            <p>Top Album: ${topAlbum} - ${albumCounts[topAlbum]} plays</p>
         `;
     } catch (error) {
         console.error('Error fetching music stats:', error);
