@@ -121,7 +121,7 @@ body {
 
 .section-content {
     grid-column: 1 / -1;
-    background-color: var(--box-color);
+    background-color: transparent;
     padding: 2rem;
     border-radius: 0.5rem;
     min-height: 60vh;
@@ -287,6 +287,108 @@ body {
 .about-text {
     text-align: left;
     margin-top: 1rem;
+}
+
+.portfolio-sections {
+    padding: 2rem;
+    background-color: var(--box-color);
+    border-radius: 0.5rem;
+}
+
+#projects-section {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    /* background-color: var(--box-color); */ /* Comment this line if it exists */
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between projects */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure the list takes full width */
+}
+
+.project {
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project:first-child {
+    border-top: 1px solid black;
+}
+
+.project:last-child {
+    border-bottom: 1px solid black;
+}
+
+.tags {
+    margin-top: 0.5rem;
+}
+
+.tags span {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    color: inherit;
+}
+
+.preview-window {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    display: none;
+    pointer-events: none;
+}
+
+.preview-window img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(203, 110, 240, 0.5);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    transform: scale(1) translate(-50%, -50%);
+    position: fixed;
+}
+
+.preview-window img.visible {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+    box-shadow: none;
+}
+
+.hide-cursor {
+    cursor: none; /* Hide the cursor */
+}
+
+.project a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.project img {
+    margin-left: 5px; /* Add some space between text and icon */
+}
+
+.link-icon {
+    float: right; /* Aligns the icon to the right */
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherit color from parent */
+    margin-left: 10px; /* Space between text and icon */
+}
+
+.link-icon i {
+    font-size: 1.2rem; /* Adjust icon size */
 }
 
 

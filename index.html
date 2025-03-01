@@ -6,21 +6,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
   <body>
     <div class="custom-cursor"></div>
     <div id="content">
       <div id="box-projects" class="box" onclick="scrollToSection('projects-section')">
-        <h1>projects</h1>
+        <h1>Projects</h1>
       </div>
       <div id="box-about" class="box" onclick="scrollToSection('about-section')">
         <h1><img src="https://em-content.zobj.net/source/apple/354/waving-hand_1f44b.png" class="wave" alt="👋"> Hi I'm reazn</h1>
         <p class="about-text">I'm a 17 year old computer science student and avid music enjoyer. <br>I love creating websites for personal use and experimenting with new technologies. <br><br> In my spare time I dabble in photography, graphic design and editing.</p>
-
       </div>
       <div id="box-lastfm" class="box" onclick="scrollToSection('music-section')">
         <h1>My listening habits</h1>
         <div id="music-stats">
+          <h3>Music Stats</h3>
           <div id="recent-track"></div>
           <div id="top-track"></div>
           <div id="top-artist"></div>
@@ -44,25 +45,116 @@
       </div>
     </div>
 
+    
     <section id="projects-section" class="content-section">
       <h2>Projects</h2>
-      <div class="section-content content-wrapper">
-        <!-- Add your projects content here -->
+      <div class="section-content">
+        <div class="projects-list">
+
+          <div class="project" data-preview="./assets/portfolio/portfolio-website.png">
+            <h3>My Portfolio</h3>
+            <p>My developer portfolio you are currently on.
+              <a href="http://reazn.tech" class="link-icon">
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project" data-preview="./assets/portfolio/test.png">
+            <h3>Notes Website</h3>
+            <p>A simple notes project featuring real-time Markdown implementation. 
+              <a href="./assets/portfolio/schulnetz-grade-calc-extension.png" class="link-icon">
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project" data-preview="./assets/portfolio/schulnetz-grade-calc-extension.png">
+            <h3>Average Grade Chrome Extension</h3>
+            <p>A Chrome Extension I built for our school's administrative website that calculates the average of all grades and highlights subjects where improvement is possible.
+              <a href="./assets/portfolio/schulnetz-grade-calc-extension.png" class="link-icon">
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </p>
+            <div class="tags">
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project" data-preview="./assets/portfolio/habenwirmorgenopl.info.png">
+            <h3>School Session Planner Website</h3>
+            <p>A simple website showing when we have school on premise or remotely.
+              <a href="./assets/portfolio/habenwirmorgenopl.info.png" class="link-icon">
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>ExcelJS</span>
+            </div>
+          </div>
+
+          <div class="project" data-preview="./assets/portfolio/flagtactoe.png">
+            <h3>FlagTacToe</h3>
+            <p>A browser educational game that combines TicTacToe with flags. It offers a Daily challenge, Singleplayer as well as online Multiplayer.
+              <a href="./assets/portfolio/flagtactoe.png" class="link-icon">
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Heroku</span>
+            </div>
+          </div>
+
+          <div class="project" data-preview="./assets/portfolio/dailies.png">
+            <h3>Daily GameStats</h3>
+            <p>A website where users can submit their scores for games like Wordle. The website tracks their scores, shows them on global leaderboards and provides the user with charts and other interesting statistics.
+              <a href="./assets/portfolio/dailies.png" class="link-icon">
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Supabase</span>
+            </div>
+          </div>
+        </div>
+        <div class="preview-window">
+          <img id="preview-image" src="" alt="Project Preview">
+        </div>
       </div>
     </section>
 
     <section id="music-section" class="content-section">
       <h2>Music</h2>
-      <div class="section-content content-wrapper">
+      <div class="section-content">
         <div id="box-lastfm" class="box" onclick="scrollToSection('music-section')">
-
+          <!-- Music content will be here -->
         </div>
       </div>
     </section>
 
     <section id="about-section" class="content-section">
       <h2>About Me</h2>
-      <div class="section-content content-wrapper">
+      <div class="section-content">
+        <!-- About content can be added here if needed -->
       </div>
     </section>
 

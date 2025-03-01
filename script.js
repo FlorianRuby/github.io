@@ -1,5 +1,8 @@
 const cursor = document.querySelector('.custom-cursor');
 const clickableElements = document.querySelectorAll('a, .box');
+const projects = document.querySelectorAll('.project');
+const previewImage = document.getElementById('preview-image');
+const previewWindow = document.querySelector('.preview-window');
 
 // Update cursor position
 document.addEventListener('mousemove', (e) => {
@@ -27,6 +30,15 @@ clickableElements.forEach(element => {
     element.addEventListener('mouseleave', () => {
         cursor.classList.remove('active', 'internal', 'external');
         cursor.removeAttribute('data-href');
+    });
+});
+
+// Add event listener to the arrow icon to hide the preview window
+const arrowIcons = document.querySelectorAll('.link-icon');
+arrowIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        const previewWindow = document.querySelector('.preview-window');
+        previewWindow.style.display = 'none'; // Hide the preview window
     });
 });
 
@@ -66,7 +78,10 @@ async function displayMusicStats() {
             <h4>Most Recent Track</h4>
             <div style="display: flex; align-items: center;">
                 <img src="${recentTrack.image[2]['#text']}" alt="${recentTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
-                <p>${recentTrack.name} by ${recentTrack.artist['#text']}</p>
+                <div>
+                    <p>${recentTrack.name}</p>
+                    <p style="margin: 0;">by ${recentTrack.artist['#text']}</p>
+                </div>
             </div>
         `;
 
@@ -108,4 +123,60 @@ async function displayMusicStats() {
 }
 
 // Call the function to display music stats
-displayMusicStats(); 
+displayMusicStats();
+
+// Add event listeners for each project
+projects.forEach((project) => {
+    project.addEventListener('mouseenter', (event) => {
+        // Hide the cursor
+        document.body.classList.add('hide-cursor');
+
+        const imagePath = project.getAttribute('data-preview');
+        previewImage.src = imagePath;
+        previewImage.classList.add('visible');
+        previewWindow.style.display = 'block'; // Show the preview window
+
+        // Position the preview window based on mouse coordinates
+        positionPreviewWindow(event);
+    });
+
+    project.addEventListener('mousemove', (event) => {
+        // Update the position of the preview window as the mouse moves
+        positionPreviewWindow(event);
+    });
+
+    project.addEventListener('mouseleave', () => {
+        // Show the cursor again
+        document.body.classList.remove('hide-cursor');
+
+        previewImage.classList.remove('visible');
+        previewWindow.style.display = 'none'; // Hide the preview window
+    });
+
+    // Add event listener to the arrow icon to hide the preview window
+    const arrowIcon = project.querySelector('.link-icon');
+    if (arrowIcon) {
+        arrowIcon.addEventListener('mouseenter', () => {
+            previewWindow.style.display = 'none'; // Hide the preview window
+        });
+
+        // Add event listener to show the preview window again when leaving the arrow icon
+        arrowIcon.addEventListener('mouseleave', () => {
+            const imagePath = project.getAttribute('data-preview');
+            previewImage.src = imagePath;
+            previewImage.classList.add('visible');
+            previewWindow.style.display = 'block'; // Show the preview window again
+        });
+    }
+});
+
+// Function to position the preview window
+function positionPreviewWindow(event) {
+    const { clientX, clientY } = event;
+    const offsetX = 10; // Decrease this value to move the preview window further to the left
+    const offsetY = 20; // Keep the vertical offset as needed
+
+    // Set the position of the preview window
+    previewWindow.style.left = `${clientX - offsetX}px`; // Adjust for the left offset
+    previewWindow.style.top = `${clientY + offsetY}px`; // Align with the cursor
+} 
