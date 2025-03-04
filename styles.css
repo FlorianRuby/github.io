@@ -60,6 +60,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Positioning context for the pseudo-element */
+}
+
+#box-links a {
+    position: relative; /* Positioning context for the underline */
+    text-decoration: none; /* Remove default underline */
+    color: #333; /* Link color */
+    margin: 0 1rem; /* Space between links */
+}
+
+/* Pseudo-element for the underline */
+#box-links a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Positions it relative to the link */
+    left: 0; /* Start from the left */
+    bottom: -5px; /* Position it below the text */
+    width: 100%; /* Full width of the link */
+    height: 3px; /* Height of the underline */
+    background: #333; /* Color of the underline */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left; /* Ensure animation starts from the left */
+    transition: transform 0.5s ease; /* Animation for the underline, longer duration */
+}
+
+/* Animate underline on hover over the entire box */
+#box-links:hover a::after {
+    transform: scaleX(1); /* Expands the underline on hover */
+}
+
+/* Keep the hover effect for individual links */
+#box-links a:hover::after {
+    transform: scaleX(1); /* Expands the underline on hover */
 }
 
 /* Add a new box for CV */
