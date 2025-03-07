@@ -71,13 +71,18 @@ async function displayMusicStats() {
         // Fetch the most recent track directly from Last.fm API
         const recentResponse = await fetch('/api/lastfm/user.getRecentTracks?user=syntiiix&limit=1');
         const recentData = await recentResponse.json();
+        
+        if (!recentData.recenttracks || !recentData.recenttracks.track || recentData.recenttracks.track.length === 0) {
+            throw new Error('No recent tracks found');
+        }
+        
         const recentTrack = recentData.recenttracks.track[0];
 
         // Display the most recent track with cover image next to the song name
         document.getElementById('recent-track').innerHTML = `
             <h4>Most Recent Track</h4>
             <div style="display: flex; align-items: center;">
-                <img src="${recentTrack.image[2]['#text']}" alt="${recentTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                <img src="${recentTrack.image[2]['#text'] || './assets/default-album.png'}" alt="${recentTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
                 <div>
                     <p>${recentTrack.name}</p>
                     <p style="margin: 0;">by ${recentTrack.artist['#text']}</p>
@@ -85,84 +90,63 @@ async function displayMusicStats() {
             </div>
         `;
 
-        // Fetch the last week's tracks from our new API endpoint
-        const tracksResponse = await fetch('/api/lastfm/tracks/weekly');
-        const tracks = await tracksResponse.json();
+        // Fetch monthly stats from local JSON
+        const monthlyResponse = await fetch('monthly_stats.json');
+        const monthlyStats = await monthlyResponse.json();
 
-        // Determine top track, artist, and album
-        const trackCounts = {};
-        const artistCounts = {};
-        const albumCounts = {};
-
-        tracks.forEach(track => {
-            // Count occurrences of each track
-            trackCounts[track.name] = (trackCounts[track.name] || 0) + 1;
-
-            // Count occurrences of each artist
-            artistCounts[track.artist['#text']] = (artistCounts[track.artist['#text']] || 0) + 1;
-
-            // Count occurrences of each album
-            albumCounts[track.album['#text']] = (albumCounts[track.album['#text']] || 0) + 1;
-        });
-
-        // Get the top track, artist, and album
-        const topTrack = Object.keys(trackCounts).reduce((a, b) => trackCounts[a] > trackCounts[b] ? a : b);
-        const topArtist = Object.keys(artistCounts).reduce((a, b) => artistCounts[a] > artistCounts[b] ? a : b);
-        const topAlbum = Object.keys(albumCounts).reduce((a, b) => albumCounts[a] > albumCounts[b] ? a : b);
-
-        // Find the track object for the top track to get its image
-        const topTrackObj = tracks.find(t => t.name === topTrack);
-        
-        // Update the display
-        if (topTrackObj) {
-            document.getElementById('top-track').innerHTML = `
-                <h4>Top Track</h4>
-                <div style="display: flex; align-items: center;">
-                    <img src="${topTrackObj.image[2]['#text']}" alt="${topTrack}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
-                    <div>
-                        <p>${topTrack}</p>
-                        <p style="margin: 0;">by ${topTrackObj.artist['#text']}</p>
-                        <p style="margin: 0; font-size: 0.8em;">Played ${trackCounts[topTrack]} times</p>
-                    </div>
+        // Display top track
+        document.getElementById('top-track').innerHTML = `
+            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Top Track This Month</h4>
+            <div style="display: flex; align-items: center;">
+                <img src="${monthlyStats.topTrack.image || './assets/default-album.png'}" alt="${monthlyStats.topTrack.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
+                <div>
+                    <p style="font-size: 0.85em; margin: 0;">${monthlyStats.topTrack.name}</p>
+                    <p style="margin: 0; font-size: 0.75em;">by ${monthlyStats.topTrack.artist}</p>
+                    <p style="margin: 0; font-size: 0.7em; color: #666;">${monthlyStats.topTrack.plays} plays</p>
                 </div>
-            `;
-        }
+            </div>
+        `;
 
-        // Find a track by the top artist to get their image
-        const topArtistTrack = tracks.find(t => t.artist['#text'] === topArtist);
-        
-        if (topArtistTrack) {
-            document.getElementById('top-artist').innerHTML = `
-                <h4>Top Artist</h4>
-                <div style="display: flex; align-items: center;">
-                    <img src="${topArtistTrack.image[2]['#text']}" alt="${topArtist}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
-                    <div>
-                        <p>${topArtist}</p>
-                        <p style="margin: 0; font-size: 0.8em;">${artistCounts[topArtist]} plays</p>
-                    </div>
+        // Display top artist
+        document.getElementById('top-artist').innerHTML = `
+            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Top Artist This Month</h4>
+            <div style="display: flex; align-items: center;">
+                <img src="${monthlyStats.topArtist.image || './assets/default-album.png'}" alt="${monthlyStats.topArtist.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
+                <div>
+                    <p style="font-size: 0.85em; margin: 0;">${monthlyStats.topArtist.name}</p>
+                    <p style="margin: 0; font-size: 0.7em; color: #666;">${monthlyStats.topArtist.plays} plays</p>
                 </div>
-            `;
-        }
+            </div>
+        `;
 
-        // Find a track from the top album to get its image
-        const topAlbumTrack = tracks.find(t => t.album['#text'] === topAlbum);
-        
-        if (topAlbumTrack) {
-            document.getElementById('top-album').innerHTML = `
-                <h4>Top Album</h4>
-                <div style="display: flex; align-items: center;">
-                    <img src="${topAlbumTrack.image[2]['#text']}" alt="${topAlbum}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
-                    <div>
-                        <p>${topAlbum}</p>
-                        <p style="margin: 0;">by ${topAlbumTrack.artist['#text']}</p>
-                        <p style="margin: 0; font-size: 0.8em;">${albumCounts[topAlbum]} plays</p>
-                    </div>
+        // Display top album
+        document.getElementById('top-album').innerHTML = `
+            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Top Album This Month</h4>
+            <div style="display: flex; align-items: center;">
+                <img src="${monthlyStats.topAlbum.image || './assets/default-album.png'}" alt="${monthlyStats.topAlbum.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
+                <div>
+                    <p style="font-size: 0.85em; margin: 0;">${monthlyStats.topAlbum.name}</p>
+                    <p style="margin: 0; font-size: 0.75em;">by ${monthlyStats.topAlbum.artist}</p>
+                    <p style="margin: 0; font-size: 0.7em; color: #666;">${monthlyStats.topAlbum.plays} plays</p>
                 </div>
-            `;
-        }
+            </div>
+        `;
 
     } catch (error) {
         console.error('Error fetching music stats:', error);
+        // Display error messages in the UI
+        const elements = ['recent-track', 'top-track', 'top-artist', 'top-album'];
+        elements.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.innerHTML = `
+                    <div style="color: #666;">
+                        <p>Unable to load music stats</p>
+                        <p style="font-size: 0.8em;">Please try again later</p>
+                    </div>
+                `;
+            }
+        });
     }
 }
 
@@ -221,8 +205,71 @@ async function displayRandomRecommendation() {
     }
 }
 
-// Call the function to display music stats
+// Add this function to update the chart
+async function updateChart() {
+    try {
+        const response = await fetch('weekly_chart.json');
+        const chartData = await response.json();
+
+        // Update the chart with the new data
+        const ctx = document.getElementById('listening-chart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',  // Changed to line chart
+            data: {
+                labels: chartData.data.map(d => d.day),
+                datasets: [{
+                    label: 'Tracks Played',
+                    data: chartData.data.map(d => d.count),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    tension: 0.4,  // Adds slight curve to lines
+                    fill: true     // Fill area under the line
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        display: true,
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 0,
+                            minRotation: 0,
+                            font: {
+                                size: 10  // Smaller font size for labels
+                            }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'  // Lighter grid lines
+                        },
+                        ticks: {
+                            stepSize: 20  // Adjusted step size
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error updating chart:', error);
+    }
+}
+
+// Call both functions when the page loads
 displayMusicStats();
+updateChart();
 
 // Add event listeners for each project
 projects.forEach((project) => {

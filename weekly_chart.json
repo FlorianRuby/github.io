@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "day": "Sat",
+      "count": 66
+    },
+    {
+      "day": "Sun",
+      "count": 58
+    },
+    {
+      "day": "Mon",
+      "count": 70
+    },
+    {
+      "day": "Tue",
+      "count": 124
+    },
+    {
+      "day": "Wed",
+      "count": 95
+    },
+    {
+      "day": "Thu",
+      "count": 105
+    },
+    {
+      "day": "Fri",
+      "count": 125
+    }
+  ]
+}

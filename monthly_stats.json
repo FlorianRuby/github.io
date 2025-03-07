@@ -1,0 +1,19 @@
+{
+  "topTrack": {
+    "name": "One More Dance",
+    "artist": "d4vd",
+    "plays": 197,
+    "image": "https://lastfm.freetls.fastly.net/i/u/174s/1b1d95c32cf8508b25eb44072be69ad7.jpg"
+  },
+  "topArtist": {
+    "name": "d4vd",
+    "plays": 372,
+    "image": "https://lastfm.freetls.fastly.net/i/u/174s/13254a6a8e0fa0fe80149b8c242eb764.jpg"
+  },
+  "topAlbum": {
+    "name": "One More Dance",
+    "artist": "d4vd",
+    "plays": 197,
+    "image": "https://lastfm.freetls.fastly.net/i/u/174s/1b1d95c32cf8508b25eb44072be69ad7.jpg"
+  }
+}
