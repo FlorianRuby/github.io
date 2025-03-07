@@ -52,16 +52,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Add visible class to the section itself
                 entry.target.classList.add('visible');
+                
+                // Add visible class to all projects in the section
+                entry.target.querySelectorAll('.project').forEach(project => {
+                    project.classList.add('visible');
+                });
+                
+                // Add visible class to about section content
+                entry.target.querySelectorAll('.about-section-content > div').forEach(div => {
+                    div.classList.add('visible');
+                });
+                
+                // Add visible class to timeline items
+                entry.target.querySelectorAll('.timeline-item').forEach(item => {
+                    item.classList.add('visible');
+                });
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px'
+        threshold: 0.1,  // Trigger when at least 10% of the element is visible
+        rootMargin: '0px 0px -10% 0px'  // Slightly offset the trigger point
     });
 
-    document.querySelectorAll('.content-wrapper').forEach((wrapper) => {
-        observer.observe(wrapper);
+    // Observe all sections
+    document.querySelectorAll('.content-section').forEach((section) => {
+        observer.observe(section);
     });
 });
 

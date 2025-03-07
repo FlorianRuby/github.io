@@ -173,8 +173,10 @@ body {
 }
 
 .content-section {
+    opacity: 1;
+    transform: translateY(0);
     min-height: 100vh;
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     width: calc((10 / 12) * 100%);
     max-width: calc((10 / 12) * 1400px);
     margin: 0 auto;
@@ -188,6 +190,7 @@ body {
     font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    margin-top: 4rem;
     color: #333;
 }
 
@@ -481,10 +484,18 @@ body {
     width: 100%;
     box-sizing: border-box;
     position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .project:last-child {
     border-bottom: none; /* Remove last border since container has bottom border */
+}
+
+.project.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tags {
@@ -628,3 +639,203 @@ body {
 .project-links a:hover {
     text-decoration: underline;
 }
+
+.about-section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-section-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-text-content {
+    padding-right: 2rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-text-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-text-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.education-timeline {
+    position: relative;
+    background-color: var(--box-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.education-timeline.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;  /* Adjust this to align with the title text */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #8E8DBE;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 18px;  /* Adjust this (12px + 6px) to match the new dot position */
+    width: 2px;
+    height: calc(100% + 1.5rem);
+    background: #8E8DBE;
+    opacity: 0.3;
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    color: #8E8DBE;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;  /* Add this to control the line height */
+}
+
+.timeline-subtitle {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.timeline-tech span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Adjust the spacing of the first timeline item to account for the new padding */
+.timeline-item:first-child {
+    margin-top: 0.5rem;
+}
+
+/* Adjust the spacing of the last timeline item */
+.timeline-item:last-child {
+    margin-bottom: 0.5rem;
+}
+
+/* Container for the scrolling tech stack */
+.tech-scroll-container {
+    max-width: 500px;  /* Limit the width to match text better */
+    overflow: hidden;
+    margin-top: 2rem;
+    position: relative;
+}
+
+/* The scrolling wrapper */
+.about-tech-stack {
+    display: flex;
+    gap: 2rem;  /* Increased gap between icons */
+    animation: scrollTech 30s linear infinite;  /* Slowed down animation */
+    width: fit-content;
+}
+
+/* Make the animation smoother */
+@keyframes scrollTech {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 1rem));  /* Adjust for smoother transition */
+    }
+}
+
+/* Adjust icon sizes */
+.about-tech-stack a {
+    width: 32px;  /* Slightly smaller icons */
+    height: 32px;
+}
+
+.about-tech-stack img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Stagger child elements animation */
+.projects-list .project,
+.about-section-content > div,
+.timeline-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Delay each project item slightly */
+.projects-list .project.visible,
+.about-section-content > div.visible,
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add staggered delays for children */
+.projects-list .project:nth-child(1) { transition-delay: 0.1s; }
+.projects-list .project:nth-child(2) { transition-delay: 0.2s; }
+.projects-list .project:nth-child(3) { transition-delay: 0.3s; }
+.projects-list .project:nth-child(4) { transition-delay: 0.4s; }
+.projects-list .project:nth-child(5) { transition-delay: 0.5s; }
+.projects-list .project:nth-child(6) { transition-delay: 0.6s; }
+
+.about-section-content .about-text-content { transition-delay: 0.2s; }
+.about-section-content .education-timeline { transition-delay: 0.4s; }
+
+.timeline-item:nth-child(1) { transition-delay: 0.5s; }
+.timeline-item:nth-child(2) { transition-delay: 0.6s; }
+.timeline-item:nth-child(3) { transition-delay: 0.7s; }
+.timeline-item:nth-child(4) { transition-delay: 0.8s; }
+.timeline-item:nth-child(5) { transition-delay: 0.9s; }
