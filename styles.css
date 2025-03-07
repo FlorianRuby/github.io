@@ -50,6 +50,7 @@
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
+    position: relative;
 }
 
 #box-lastfm {
@@ -406,6 +407,11 @@ body {
     font-size: 1.0rem;
 }
 
+.about-text a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .portfolio-sections {
     padding: 2rem;
     background-color: var(--box-color);
@@ -506,6 +512,37 @@ body {
 
 .link-icon i {
     font-size: 1.2rem; /* Adjust icon size */
+}
+
+.tech-stack {
+    display: grid;
+    grid-template-columns: repeat(2, 60px);
+    grid-template-rows: repeat(4, 60px);
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+
+.tech-stack a {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.tech-stack img {
+    width: 60px;
+    height: 60px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+#box-about:hover .tech-stack img {
+    filter: grayscale(0%);
+}
+
+.tech-stack a:hover img {
+    transform: scale(1.1);
 }
 
 
