@@ -153,7 +153,6 @@ async function displayMusicStats() {
 // Function to display a random track recommendation from a Spotify playlist
 async function displayRandomRecommendation() {
     try {
-        // Spotify playlist tracks from https://open.spotify.com/playlist/522c2o74Xw5z1JxWBBGutT
         const playlistTracks = [
             { name: "Dirty Secrets", artist: "d4vd", image: "./assets/cover/Dirty Secrets.jpg" },
             { name: "DTN", artist: "d4vd", image: "./assets/cover/DTN.jpg" },
@@ -211,53 +210,75 @@ async function updateChart() {
         const response = await fetch('weekly_chart.json');
         const chartData = await response.json();
 
+        // Debug logs to see what data we're working with
+        console.log('Raw chart data:', chartData);
+        console.log('Labels:', chartData.data.map(d => d.day));
+        console.log('Values:', chartData.data.map(d => d.count));
+
         // Update the chart with the new data
         const ctx = document.getElementById('listening-chart').getContext('2d');
         new Chart(ctx, {
-            type: 'line',  // Changed to line chart
+            type: 'line',
             data: {
                 labels: chartData.data.map(d => d.day),
                 datasets: [{
                     label: 'Tracks Played',
-                    data: chartData.data.map(d => d.count),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    data: chartData.data.map(d => ({ x: d.day, y: d.count })),
+                    backgroundColor: 'rgba(142, 141, 190, 0.4)',
+                    borderColor: 'rgba(142, 141, 190, 1)',
                     borderWidth: 2,
-                    tension: 0.4,  // Adds slight curve to lines
-                    fill: true     // Fill area under the line
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 0
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                parsing: {
+                    xAxisKey: 'x',
+                    yAxisKey: 'y'
+                },
                 scales: {
                     x: {
+                        type: 'category',
                         display: true,
                         grid: {
                             display: false
                         },
                         ticks: {
+                            source: 'data',
                             autoSkip: false,
                             maxRotation: 0,
                             minRotation: 0,
                             font: {
-                                size: 10  // Smaller font size for labels
-                            }
+                                size: 10
+                            },
+                            color: '#666'
                         }
                     },
                     y: {
                         beginAtZero: true,
                         grid: {
-                            color: 'rgba(0, 0, 0, 0.1)'  // Lighter grid lines
+                            display: false
                         },
                         ticks: {
-                            stepSize: 20  // Adjusted step size
+                            stepSize: 20,
+                            font: {
+                                size: 10
+                            },
+                            color: '#666'
                         }
                     }
                 },
                 plugins: {
                     legend: {
                         display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        mode: 'index',
+                        intersect: false
                     }
                 }
             }
