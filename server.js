@@ -3,10 +3,6 @@ const path = require('path');
 const fetch = require('node-fetch');
 require('dotenv').config();
 
-// Import our lastfm modules
-const lastfm = require('./lastfm');
-const lastWeekData = require('./fetch_last_week_data');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -39,29 +35,52 @@ app.get('/api/lastfm/:method', async (req, res) => {
   }
 });
 
-// New endpoint to serve recent tracks from memory
-app.get('/recent_tracks.json', (req, res) => {
-  const tracks = lastfm.getCachedTracks();
-  res.json(tracks);
-});
-
-// New endpoint to serve last week's tracks from memory
-app.get('/last_week_tracks.json', (req, res) => {
-  const tracks = lastWeekData.getLastWeekTracks();
-  res.json(tracks);
+// New endpoint for last week's tracks
+app.get('/api/lastfm/tracks/weekly', async (req, res) => {
+  try {
+    const apiKey = process.env.LASTFM_API_KEY || '974fb2e0a3add0ac42c2729f6c1e854a';
+    const username = 'syntiiix';
+    const limit = 200;
+    const days = 7;
+    
+    const allTracks = [];
+    const currentDate = Math.floor(Date.now() / 1000);
+    const oneWeekAgo = currentDate - (days * 24 * 60 * 60);
+    
+    // Fetch up to 6 pages of tracks
+    for (let page = 1; page <= 6; page++) {
+      const response = await fetch(
+        `http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${username}&api_key=${apiKey}&format=json&limit=${limit}&page=${page}`
+      );
+      
+      const data = await response.json();
+      const tracks = data.recenttracks.track;
+      
+      if (!tracks || tracks.length === 0) break;
+      
+      // Filter tracks from the last week
+      const filteredTracks = tracks.filter(track => {
+        if (track.date && track.date['#text']) {
+          const trackDate = Math.floor(new Date(track.date['#text']).getTime() / 1000);
+          return trackDate >= oneWeekAgo;
+        }
+        return false;
+      });
+      
+      allTracks.push(...filteredTracks);
+      
+      // If we have less tracks than the limit, we've reached the end
+      if (tracks.length < limit) break;
+    }
+    
+    res.json(allTracks);
+  } catch (error) {
+    console.error('Error fetching weekly tracks:', error);
+    res.status(500).json({ error: 'Failed to fetch weekly tracks' });
+  }
 });
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  
-  // Start the interval to fetch recent tracks
-  lastfm.startFetchInterval()
-    .then(() => console.log('Initial Last.fm tracks fetch completed'))
-    .catch(err => console.error('Error during initial Last.fm fetch:', err));
-    
-  // Start the interval to fetch last week's tracks
-  lastWeekData.startWeeklyFetch()
-    .then(() => console.log('Initial Last.fm last week tracks fetch completed'))
-    .catch(err => console.error('Error during initial Last.fm last week fetch:', err));
 }); 

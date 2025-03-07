@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch and display music stats
 async function displayMusicStats() {
     try {
-        // Fetch the most recent track from Last.fm API
-        const recentResponse = await fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=syntiiix&api_key=974fb2e0a3add0ac42c2729f6c1e854a&format=json&limit=1`);
+        // Fetch the most recent track directly from Last.fm API
+        const recentResponse = await fetch('/api/lastfm/user.getRecentTracks?user=syntiiix&limit=1');
         const recentData = await recentResponse.json();
         const recentTrack = recentData.recenttracks.track[0];
 
@@ -85,8 +85,8 @@ async function displayMusicStats() {
             </div>
         `;
 
-        // Fetch the last week's data from last_week_tracks.json
-        const tracksResponse = await fetch('last_week_tracks.json');
+        // Fetch the last week's tracks from our new API endpoint
+        const tracksResponse = await fetch('/api/lastfm/tracks/weekly');
         const tracks = await tracksResponse.json();
 
         // Determine top track, artist, and album
@@ -110,22 +110,57 @@ async function displayMusicStats() {
         const topArtist = Object.keys(artistCounts).reduce((a, b) => artistCounts[a] > artistCounts[b] ? a : b);
         const topAlbum = Object.keys(albumCounts).reduce((a, b) => albumCounts[a] > albumCounts[b] ? a : b);
 
-        // Display monthly music stats
-        document.getElementById('top-track').innerHTML = `
-            <h3>Monthly Music Stats</h3>
-            <p>Top Track: ${topTrack} - ${trackCounts[topTrack]} plays</p>
-            <p>Top Artist: ${topArtist} - ${artistCounts[topArtist]} plays</p>
-        `;
+        // Find the track object for the top track to get its image
+        const topTrackObj = tracks.find(t => t.name === topTrack);
+        
+        // Update the display
+        if (topTrackObj) {
+            document.getElementById('top-track').innerHTML = `
+                <h4>Top Track</h4>
+                <div style="display: flex; align-items: center;">
+                    <img src="${topTrackObj.image[2]['#text']}" alt="${topTrack}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                    <div>
+                        <p>${topTrack}</p>
+                        <p style="margin: 0;">by ${topTrackObj.artist['#text']}</p>
+                        <p style="margin: 0; font-size: 0.8em;">Played ${trackCounts[topTrack]} times</p>
+                    </div>
+                </div>
+            `;
+        }
 
-        // Display top album with image
-        document.getElementById('top-album').innerHTML = `
-            <div>
-                <p>Top Album: ${topAlbum} - ${albumCounts[topAlbum]} plays</p>
-            </div>
-        `;
+        // Find a track by the top artist to get their image
+        const topArtistTrack = tracks.find(t => t.artist['#text'] === topArtist);
+        
+        if (topArtistTrack) {
+            document.getElementById('top-artist').innerHTML = `
+                <h4>Top Artist</h4>
+                <div style="display: flex; align-items: center;">
+                    <img src="${topArtistTrack.image[2]['#text']}" alt="${topArtist}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                    <div>
+                        <p>${topArtist}</p>
+                        <p style="margin: 0; font-size: 0.8em;">${artistCounts[topArtist]} plays</p>
+                    </div>
+                </div>
+            `;
+        }
 
-        // Display random recommendation
-        displayRandomRecommendation();
+        // Find a track from the top album to get its image
+        const topAlbumTrack = tracks.find(t => t.album['#text'] === topAlbum);
+        
+        if (topAlbumTrack) {
+            document.getElementById('top-album').innerHTML = `
+                <h4>Top Album</h4>
+                <div style="display: flex; align-items: center;">
+                    <img src="${topAlbumTrack.image[2]['#text']}" alt="${topAlbum}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                    <div>
+                        <p>${topAlbum}</p>
+                        <p style="margin: 0;">by ${topAlbumTrack.artist['#text']}</p>
+                        <p style="margin: 0; font-size: 0.8em;">${albumCounts[topAlbum]} plays</p>
+                    </div>
+                </div>
+            `;
+        }
+
     } catch (error) {
         console.error('Error fetching music stats:', error);
     }
