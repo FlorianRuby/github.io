@@ -224,6 +224,7 @@ async function updateChart() {
                 datasets: [{
                     label: 'Tracks Played',
                     data: chartData.data.map(d => ({ x: d.day, y: d.count })),
+                    backgroundColor: 'rgba(142, 141, 190, 0.0)',
                     borderColor: 'rgba(142, 141, 190, 1)',
                     borderWidth: 2,
                     tension: 0.4,
@@ -281,6 +282,20 @@ async function updateChart() {
                     }
                 }
             }
+        });
+
+        // Add hover effect for the Last.fm box
+        const lastfmBox = document.getElementById('box-lastfm');
+        const chart = ctx.chart;
+
+        lastfmBox.addEventListener('mouseenter', () => {
+            chart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.4)';
+            chart.update('none');
+        });
+
+        lastfmBox.addEventListener('mouseleave', () => {
+            chart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.0)';
+            chart.update('none');
         });
     } catch (error) {
         console.error('Error updating chart:', error);
