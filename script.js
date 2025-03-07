@@ -347,58 +347,55 @@ displayMusicStats();
 displayRandomRecommendation();
 updateChart();
 
-// Add event listeners for each project
+// Function to position the preview window
+function positionPreviewWindow(event) {
+    const { clientX, clientY } = event;
+    const offsetX = 10;
+    const offsetY = 20;
+
+    // Get the links container element from the current project
+    const linksContainer = event.currentTarget.querySelector('.project-links');
+    if (linksContainer) {
+        const linksRect = linksContainer.getBoundingClientRect();
+        
+        // Calculate distance from cursor to links container
+        const inLinksArea = 
+            clientX >= linksRect.left - 110 &&
+            clientX <= linksRect.right + 50 &&
+            clientY >= linksRect.top - 100 &&
+            clientY <= linksRect.bottom + 100;
+
+        // Hide preview and show cursor if within links area
+        if (inLinksArea) {
+            previewWindow.style.display = 'none';
+            document.body.classList.remove('hide-cursor');
+            return;
+        }
+    }
+
+    // Show preview window and hide cursor
+    document.body.classList.add('hide-cursor');
+    previewWindow.style.display = 'block';
+    previewWindow.style.left = `${clientX - offsetX}px`;
+    previewWindow.style.top = `${clientY + offsetY}px`;
+}
+
+// Update project event listeners to remove cursor management
 projects.forEach((project) => {
     project.addEventListener('mouseenter', (event) => {
-        // Hide the cursor
-        document.body.classList.add('hide-cursor');
-
         const imagePath = project.getAttribute('data-preview');
         previewImage.src = imagePath;
         previewImage.classList.add('visible');
-        previewWindow.style.display = 'block'; // Show the preview window
-
-        // Position the preview window based on mouse coordinates
         positionPreviewWindow(event);
     });
 
     project.addEventListener('mousemove', (event) => {
-        // Update the position of the preview window as the mouse moves
         positionPreviewWindow(event);
     });
 
     project.addEventListener('mouseleave', () => {
-        // Show the cursor again
         document.body.classList.remove('hide-cursor');
-
         previewImage.classList.remove('visible');
-        previewWindow.style.display = 'none'; // Hide the preview window
+        previewWindow.style.display = 'none';
     });
-
-    // Add event listener to the arrow icon to hide the preview window
-    const arrowIcon = project.querySelector('.link-icon');
-    if (arrowIcon) {
-        arrowIcon.addEventListener('mouseenter', () => {
-            previewWindow.style.display = 'none'; // Hide the preview window
-        });
-
-        // Add event listener to show the preview window again when leaving the arrow icon
-        arrowIcon.addEventListener('mouseleave', () => {
-            const imagePath = project.getAttribute('data-preview');
-            previewImage.src = imagePath;
-            previewImage.classList.add('visible');
-            previewWindow.style.display = 'block'; // Show the preview window again
-        });
-    }
-});
-
-// Function to position the preview window
-function positionPreviewWindow(event) {
-    const { clientX, clientY } = event;
-    const offsetX = 10; // Decrease this value to move the preview window further to the left
-    const offsetY = 20; // Keep the vertical offset as needed
-
-    // Set the position of the preview window
-    previewWindow.style.left = `${clientX - offsetX}px`; // Adjust for the left offset
-    previewWindow.style.top = `${clientY + offsetY}px`; // Align with the cursor
-} 
+}); 
