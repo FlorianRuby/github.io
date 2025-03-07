@@ -217,7 +217,7 @@ async function updateChart() {
 
         // Update the chart with the new data
         const ctx = document.getElementById('listening-chart').getContext('2d');
-        new Chart(ctx, {
+        const myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: chartData.data.map(d => d.day),
@@ -229,7 +229,10 @@ async function updateChart() {
                     borderWidth: 2,
                     tension: 0.4,
                     fill: true,
-                    pointRadius: 0
+                    pointRadius: 0,
+                    transition: {
+                        duration: 200
+                    }
                 }]
             },
             options: {
@@ -286,16 +289,21 @@ async function updateChart() {
 
         // Add hover effect for the Last.fm box
         const lastfmBox = document.getElementById('box-lastfm');
-        const chart = ctx.chart;
 
         lastfmBox.addEventListener('mouseenter', () => {
-            chart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.4)';
-            chart.update('none');
+            myChart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.4)';
+            myChart.update({
+                duration: 400,
+                easing: 'easeOutQuad'
+            });
         });
 
         lastfmBox.addEventListener('mouseleave', () => {
-            chart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.0)';
-            chart.update('none');
+            myChart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.0)';
+            myChart.update({
+                duration: 400,
+                easing: 'easeOutQuad'
+            });
         });
     } catch (error) {
         console.error('Error updating chart:', error);
