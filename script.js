@@ -110,15 +110,79 @@ async function displayMusicStats() {
         const topArtist = Object.keys(artistCounts).reduce((a, b) => artistCounts[a] > artistCounts[b] ? a : b);
         const topAlbum = Object.keys(albumCounts).reduce((a, b) => albumCounts[a] > albumCounts[b] ? a : b);
 
-        // Display monthly music stats header
+        // Display monthly music stats
         document.getElementById('top-track').innerHTML = `
-            <h4>Monthly Music Stats</h4>
+            <h3>Monthly Music Stats</h3>
             <p>Top Track: ${topTrack} - ${trackCounts[topTrack]} plays</p>
             <p>Top Artist: ${topArtist} - ${artistCounts[topArtist]} plays</p>
-            <p>Top Album: ${topAlbum} - ${albumCounts[topAlbum]} plays</p>
         `;
+
+        // Display top album with image
+        document.getElementById('top-album').innerHTML = `
+            <div>
+                <p>Top Album: ${topAlbum} - ${albumCounts[topAlbum]} plays</p>
+            </div>
+        `;
+
+        // Display random recommendation
+        displayRandomRecommendation();
     } catch (error) {
         console.error('Error fetching music stats:', error);
+    }
+}
+
+// Function to display a random track recommendation from a Spotify playlist
+async function displayRandomRecommendation() {
+    try {
+        const playlistTracks = [
+            { name: "Dirty Secrets", artist: "d4vd", image: "https://i.scdn.co/image/ab67616d0000b273c6e0948b4aa3cccb2d274a8d" },
+            { name: "DTN", artist: "d4vd", image: "https://i.scdn.co/image/ab67616d0000b273c6e0948b4aa3cccb2d274a8d" },
+            { name: "Lady Brown (feat. Cise Starr from CYNE)", artist: "Nujabes, Cise Starr", image: "https://i.scdn.co/image/ab67616d0000b273c0133d07a9e3b150e6868c4f" },
+            { name: "Lullaby", artist: "Ichiko Aoba", image: "https://i.scdn.co/image/ab67616d0000b273d8a5c3e4d0b6c1c89b02c5c7" },
+            { name: "Music On The Radio", artist: "Empire Of The Sun", image: "https://i.scdn.co/image/ab67616d0000b273c8a1e4f1a4f9c1421b4ead9c" },
+            { name: "Husk", artist: "Men I Trust", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
+            { name: "What's Going On", artist: "Marvin Gaye", image: "https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc" },
+            { name: "I'll Be Right There", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
+            { name: "either on or off the drugs", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
+            { name: "i recovered from this", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
+            { name: "Don't Put Anything On the Bible (feat. Buzzy Lee)", artist: "JPEGMAFIA, Buzzy Lee", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
+            { name: "Imaginary Folklore", artist: "clammbon, Nujabes", image: "https://i.scdn.co/image/ab67616d0000b273c0133d07a9e3b150e6868c4f" },
+            { name: "Kids", artist: "MGMT", image: "https://i.scdn.co/image/ab67616d0000b2738b32b139981e79f2ebe005eb" },
+            { name: "Wonderful World", artist: "The Flying Pickets", image: "https://i.scdn.co/image/ab67616d0000b273e0e5e8a28c2befa7571a6c9d" },
+            { name: "Love Lost", artist: "Mac Miller, The Temper Trap", image: "https://i.scdn.co/image/ab67616d0000b273a9f6eb70aff5f29b3d96a26e" },
+            { name: "Cigarette Daydreams", artist: "Cage The Elephant", image: "https://i.scdn.co/image/ab67616d0000b273bcaf6c7f3c2e9d1f91034782" },
+            { name: "Call me when you're home", artist: "kkanji", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
+            { name: "Levitation", artist: "Beach House", image: "https://i.scdn.co/image/ab67616d0000b273e69f3477f5bbc8c2bc34c698" },
+            { name: "Sparks", artist: "Beach House", image: "https://i.scdn.co/image/ab67616d0000b273e69f3477f5bbc8c2bc34c698" },
+            { name: "Greed", artist: "kkanji", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
+            { name: "Here, There And Everywhere - Remastered 2009", artist: "The Beatles", image: "https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0" },
+            { name: "The Spins", artist: "Mac Miller, Empire Of The Sun", image: "https://i.scdn.co/image/ab67616d0000b273a9f6eb70aff5f29b3d96a26e" },
+            { name: "Just Can't Get Enough", artist: "Black Eyed Peas", image: "https://i.scdn.co/image/ab67616d0000b273f0147e2438d9d42b9471b6a4" },
+            { name: "DIKEMBE!", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
+            { name: "ARE YOU HAPPY?", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
+            { name: "Meet Me Halfway", artist: "Black Eyed Peas", image: "https://i.scdn.co/image/ab67616d0000b273f0147e2438d9d42b9471b6a4" },
+            { name: "Who Did You Touch?", artist: "Montell Fish", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
+            { name: "Ain't No Mountain High Enough", artist: "Marvin Gaye, Tammi Terrell", image: "https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc" },
+            { name: "Smalltown Boy", artist: "Bronski Beat", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" }
+        ];
+
+        // Select a random track
+        const randomTrack = playlistTracks[Math.floor(Math.random() * playlistTracks.length)];
+
+        // Display the random recommendation
+        document.getElementById('random-recommendation').innerHTML = `
+            <h4>Random Recommendation</h4>
+            <div style="display: flex; align-items: center;">
+                <img src="${randomTrack.image}" alt="${randomTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                <div>
+                    <p>${randomTrack.name}</p>
+                    <p style="margin: 0;">by ${randomTrack.artist}</p>
+                </div>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 5px;">From <a href="https://open.spotify.com/playlist/522c2o74Xw5z1JxWBBGutT?si=1feb0965c2664c25" target="_blank" style="color: inherit; text-decoration: underline;">Spotify Playlist</a></p>
+        `;
+    } catch (error) {
+        console.error('Error displaying random recommendation:', error);
     }
 }
 

@@ -48,6 +48,7 @@
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: left;
+    transition: all 0.3s ease;
 }
 
 #box-links {
@@ -282,7 +283,9 @@ body {
     max-height: 200px;
     width: 100%;
     height: auto;
+    margin-top: 30px;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
 
@@ -421,6 +424,12 @@ body {
 
 .link-icon i {
     font-size: 1.2rem; /* Adjust icon size */
+}
+
+#random-recommendation {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
