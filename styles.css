@@ -277,6 +277,20 @@ body {
     gap: 1.25rem;
 }
 
+#playsChart {
+    max-width: 400px;
+    max-height: 200px;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+#box-lastfm:hover #playsChart {
+    background-color: var(--box-color);
+}
+
 #music-stats > div {
     margin-bottom: 0.5rem;
 }
@@ -345,29 +359,29 @@ body {
     height: 40px;
 }
 
-#playsChart {
-    max-width: 400px;
-    max-height: 200px;
-    width: 100%;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-
 #box-about h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: left;
     margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#box-about h1 span {
+    background-image: linear-gradient(135deg, #E7C76F 0%, #8E8DBE 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .wave {
     display: inline-block;
-    width: 32px;
-    height: 32px;
-    vertical-align: -4px;
-    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+    vertical-align: -8px;
+    margin-right: 12px;
     transform-origin: 70% 70%;
 }
 
@@ -389,6 +403,7 @@ body {
 .about-text {
     text-align: left;
     margin-top: 1rem;
+    font-size: 1.0rem;
 }
 
 .portfolio-sections {

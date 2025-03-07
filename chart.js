@@ -22,7 +22,7 @@ async function renderChart() {
             datasets: [{
                 label: 'Plays Over the Last Week',
                 data: Object.values(playCounts), 
-                backgroundColor: 'rgba(142, 141, 190, 0.00)',
+                backgroundColor: 'rgba(142, 141, 190, 0.0)',
                 borderColor: 'rgba(142, 141, 190, 1)',
                 borderWidth: 2, 
                 fill: true, 
@@ -58,22 +58,6 @@ async function renderChart() {
                     tooltip: {
                         enabled: true 
                     }
-                },
-                hover: {
-                    mode: 'nearest',
-                    intersect: true,
-                    onHover: function(event, chartElement) {
-                        const chartArea = this.chart.chartArea;
-                        const ctx = this.chart.ctx;
-
-                        
-                        if (chartElement.length) {
-                            ctx.save();
-                            ctx.fillStyle = 'rgba(128, 0, 128, 0.5)'; 
-                            ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
-                            ctx.restore();
-                        }
-                    }
                 }
             }
         };
@@ -85,18 +69,15 @@ async function renderChart() {
         
         
         const musicBox = document.getElementById('box-lastfm');
-        const chartInstance = playsChart;
         
         musicBox.addEventListener('mouseenter', () => {
-            
-            chartInstance.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.4)';
-            chartInstance.update();
+            playsChart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.2)';
+            playsChart.update('none'); // Use 'none' for smoother transition
         });
         
         musicBox.addEventListener('mouseleave', () => {
-            
-            chartInstance.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.00)';
-            chartInstance.update();
+            playsChart.data.datasets[0].backgroundColor = 'rgba(142, 141, 190, 0.0)';
+            playsChart.update('none'); // Use 'none' for smoother transition
         });
         
     } catch (error) {
