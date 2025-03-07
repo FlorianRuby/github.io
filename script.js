@@ -134,36 +134,37 @@ async function displayMusicStats() {
 // Function to display a random track recommendation from a Spotify playlist
 async function displayRandomRecommendation() {
     try {
+        // Spotify playlist tracks from https://open.spotify.com/playlist/522c2o74Xw5z1JxWBBGutT
         const playlistTracks = [
-            { name: "Dirty Secrets", artist: "d4vd", image: "https://i.scdn.co/image/ab67616d0000b273c6e0948b4aa3cccb2d274a8d" },
-            { name: "DTN", artist: "d4vd", image: "https://i.scdn.co/image/ab67616d0000b273c6e0948b4aa3cccb2d274a8d" },
-            { name: "Lady Brown (feat. Cise Starr from CYNE)", artist: "Nujabes, Cise Starr", image: "https://i.scdn.co/image/ab67616d0000b273c0133d07a9e3b150e6868c4f" },
-            { name: "Lullaby", artist: "Ichiko Aoba", image: "https://i.scdn.co/image/ab67616d0000b273d8a5c3e4d0b6c1c89b02c5c7" },
-            { name: "Music On The Radio", artist: "Empire Of The Sun", image: "https://i.scdn.co/image/ab67616d0000b273c8a1e4f1a4f9c1421b4ead9c" },
-            { name: "Husk", artist: "Men I Trust", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
-            { name: "What's Going On", artist: "Marvin Gaye", image: "https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc" },
-            { name: "I'll Be Right There", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
-            { name: "either on or off the drugs", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
-            { name: "i recovered from this", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
-            { name: "Don't Put Anything On the Bible (feat. Buzzy Lee)", artist: "JPEGMAFIA, Buzzy Lee", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
-            { name: "Imaginary Folklore", artist: "clammbon, Nujabes", image: "https://i.scdn.co/image/ab67616d0000b273c0133d07a9e3b150e6868c4f" },
-            { name: "Kids", artist: "MGMT", image: "https://i.scdn.co/image/ab67616d0000b2738b32b139981e79f2ebe005eb" },
-            { name: "Wonderful World", artist: "The Flying Pickets", image: "https://i.scdn.co/image/ab67616d0000b273e0e5e8a28c2befa7571a6c9d" },
-            { name: "Love Lost", artist: "Mac Miller, The Temper Trap", image: "https://i.scdn.co/image/ab67616d0000b273a9f6eb70aff5f29b3d96a26e" },
-            { name: "Cigarette Daydreams", artist: "Cage The Elephant", image: "https://i.scdn.co/image/ab67616d0000b273bcaf6c7f3c2e9d1f91034782" },
-            { name: "Call me when you're home", artist: "kkanji", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
-            { name: "Levitation", artist: "Beach House", image: "https://i.scdn.co/image/ab67616d0000b273e69f3477f5bbc8c2bc34c698" },
-            { name: "Sparks", artist: "Beach House", image: "https://i.scdn.co/image/ab67616d0000b273e69f3477f5bbc8c2bc34c698" },
-            { name: "Greed", artist: "kkanji", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
-            { name: "Here, There And Everywhere - Remastered 2009", artist: "The Beatles", image: "https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0" },
-            { name: "The Spins", artist: "Mac Miller, Empire Of The Sun", image: "https://i.scdn.co/image/ab67616d0000b273a9f6eb70aff5f29b3d96a26e" },
-            { name: "Just Can't Get Enough", artist: "Black Eyed Peas", image: "https://i.scdn.co/image/ab67616d0000b273f0147e2438d9d42b9471b6a4" },
-            { name: "DIKEMBE!", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
-            { name: "ARE YOU HAPPY?", artist: "JPEGMAFIA", image: "https://i.scdn.co/image/ab67616d0000b273e5d6c0e9e8264e4251996aaa" },
-            { name: "Meet Me Halfway", artist: "Black Eyed Peas", image: "https://i.scdn.co/image/ab67616d0000b273f0147e2438d9d42b9471b6a4" },
-            { name: "Who Did You Touch?", artist: "Montell Fish", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" },
-            { name: "Ain't No Mountain High Enough", artist: "Marvin Gaye, Tammi Terrell", image: "https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc" },
-            { name: "Smalltown Boy", artist: "Bronski Beat", image: "https://i.scdn.co/image/ab67616d0000b273c2e9b9e48d54a9a5a0c8c7c6" }
+            { name: "Dirty Secrets", artist: "d4vd", image: "./assets/cover/Dirty Secrets.jpg" },
+            { name: "DTN", artist: "d4vd", image: "./assets/cover/DTN.jpg" },
+            { name: "Lady Brown (feat. Cise Starr from CYNE)", artist: "Nujabes, Cise Starr", image: "./assets/cover/Lady Brown (feat. Cise Starr from CYNE).jpg" },
+            { name: "Lullaby", artist: "Ichiko Aoba", image: "./assets/cover/Lullaby.jpg" },
+            { name: "Music On The Radio", artist: "Empire Of The Sun", image: "./assets/cover/Music On The Radio.jpg" },
+            { name: "Husk", artist: "Men I Trust", image: "./assets/cover/Husk.jpg" },
+            { name: "What's Going On", artist: "Marvin Gaye", image: "./assets/cover/What's Going On.jpg" },
+            { name: "I'll Be Right There", artist: "JPEGMAFIA", image: "./assets/cover/I'll Be Right There.jpg" },
+            { name: "either on or off the drugs", artist: "JPEGMAFIA", image: "./assets/cover/either on or off the drugs.jpg" },
+            { name: "i recovered from this", artist: "JPEGMAFIA", image: "./assets/cover/i recovered from this.jpg" },
+            { name: "Don't Put Anything On the Bible (feat. Buzzy Lee)", artist: "JPEGMAFIA, Buzzy Lee", image: "./assets/cover/Don't Put Anything On the Bible (feat. Buzzy Lee).jpg" },
+            { name: "Imaginary Folklore", artist: "clammbon, Nujabes", image: "./assets/cover/Imaginary Folklore.jpg" },
+            { name: "Kids", artist: "MGMT", image: "./assets/cover/Kids.jpg" },
+            { name: "Wonderful World", artist: "The Flying Pickets", image: "./assets/cover/Wonderful World.jpg" },
+            { name: "Love Lost", artist: "Mac Miller, The Temper Trap", image: "./assets/cover/Love Lost.jpg" },
+            { name: "Cigarette Daydreams", artist: "Cage The Elephant", image: "./assets/cover/Cigarette Daydreams.jpg" },
+            { name: "Call me when you're home", artist: "kkanji", image: "./assets/cover/Call me when you're home.jpg" },
+            { name: "Levitation", artist: "Beach House", image: "./assets/cover/Levitation.jpg" },
+            { name: "Sparks", artist: "Beach House", image: "./assets/cover/Sparks.jpg" },
+            { name: "Greed", artist: "kkanji", image: "./assets/cover/Greed.jpg" },
+            { name: "Here, There And Everywhere - Remastered 2009", artist: "The Beatles", image: "./assets/cover/Here, There And Everywhere - Remastered 2009.jpg" },
+            { name: "The Spins", artist: "Mac Miller, Empire Of The Sun", image: "./assets/cover/The Spins.jpg" },
+            { name: "Just Can't Get Enough", artist: "Black Eyed Peas", image: "./assets/cover/Just Can't Get Enough.jpg" },
+            { name: "DIKEMBE!", artist: "JPEGMAFIA", image: "./assets/cover/DIKEMBE!.jpg" },
+            { name: "ARE YOU HAPPY?", artist: "JPEGMAFIA", image: "./assets/cover/ARE YOU HAPPY?.jpg" },
+            { name: "Meet Me Halfway", artist: "Black Eyed Peas", image: "./assets/cover/Meet Me Halfway.jpg" },
+            { name: "Who Did You Touch?", artist: "Montell Fish", image: "./assets/cover/Who Did You Touch?.jpg" },
+            { name: "Ain't No Mountain High Enough", artist: "Marvin Gaye, Tammi Terrell", image: "./assets/cover/Ain't No Mountain High Enough.jpg" },
+            { name: "Smalltown Boy", artist: "Bronski Beat", image: "./assets/cover/Smalltown Boy.jpg" }
         ];
 
         // Select a random track
@@ -171,7 +172,7 @@ async function displayRandomRecommendation() {
 
         // Display the random recommendation
         document.getElementById('random-recommendation').innerHTML = `
-            <h4>Random Recommendation</h4>
+            <h4 style="margin-top: 0.5rem;">Random Recommendation</h4>
             <div style="display: flex; align-items: center;">
                 <img src="${randomTrack.image}" alt="${randomTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
                 <div>
@@ -179,7 +180,6 @@ async function displayRandomRecommendation() {
                     <p style="margin: 0;">by ${randomTrack.artist}</p>
                 </div>
             </div>
-            <p style="font-size: 0.8rem; margin-top: 5px;">From <a href="https://open.spotify.com/playlist/522c2o74Xw5z1JxWBBGutT?si=1feb0965c2664c25" target="_blank" style="color: inherit; text-decoration: underline;">Spotify Playlist</a></p>
         `;
     } catch (error) {
         console.error('Error displaying random recommendation:', error);
