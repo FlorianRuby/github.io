@@ -24,12 +24,23 @@
 
 
 #box-projects {
-    background-color: var(--box-color);
+    background: linear-gradient(135deg, #E7C76F 0%, #8E8DBE 60%);
     grid-column: 2 / 7;
     grid-row: 2 / 8;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-projects h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #box-about {
