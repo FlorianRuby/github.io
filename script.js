@@ -80,12 +80,12 @@ async function displayMusicStats() {
 
         // Display the most recent track with cover image next to the song name
         document.getElementById('recent-track').innerHTML = `
-            <h4>Most Recent Track</h4>
+            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Most Recent Track</h4>
             <div style="display: flex; align-items: center;">
-                <img src="${recentTrack.image[2]['#text'] || './assets/default-album.png'}" alt="${recentTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                <img src="${recentTrack.image[2]['#text'] || './assets/default-album.png'}" alt="${recentTrack.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p>${recentTrack.name}</p>
-                    <p style="margin: 0;">by ${recentTrack.artist['#text']}</p>
+                    <p style="font-size: 0.85em; margin: 0;">${recentTrack.name}</p>
+                    <p style="margin: 0; font-size: 0.75em;">by ${recentTrack.artist['#text']}</p>
                 </div>
             </div>
         `;
@@ -190,12 +190,12 @@ async function displayRandomRecommendation() {
 
         // Display the random recommendation
         document.getElementById('random-recommendation').innerHTML = `
-            <h4 style="margin-top: 0.5rem;">Random Recommendation</h4>
+            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Random Recommendation</h4>
             <div style="display: flex; align-items: center;">
-                <img src="${randomTrack.image}" alt="${randomTrack.name}" style="border-radius: 13px; width: 50px; height: 50px; margin-right: 10px;">
+                <img src="${randomTrack.image}" alt="${randomTrack.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p>${randomTrack.name}</p>
-                    <p style="margin: 0;">by ${randomTrack.artist}</p>
+                    <p style="font-size: 0.85em; margin: 0;">${randomTrack.name}</p>
+                    <p style="margin: 0; font-size: 0.75em;">by ${randomTrack.artist}</p>
                 </div>
             </div>
         `;
@@ -288,8 +288,9 @@ async function updateChart() {
     }
 }
 
-// Call both functions when the page loads
+// Call all functions when the page loads
 displayMusicStats();
+displayRandomRecommendation();
 updateChart();
 
 // Add event listeners for each project

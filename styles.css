@@ -14,19 +14,19 @@
 #content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(20, 1fr);
-    gap: 1rem;
-    padding: 1rem 2rem;
+    grid-template-rows: repeat(32, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 2rem 4rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 
 #box-projects {
     background-color: var(--box-color);
     grid-column: 2 / 7;
-    grid-row: 2 / 6;
+    grid-row: 2 / 8;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
@@ -35,7 +35,7 @@
 #box-about {
     background-color: var(--box-color);
     grid-column: 7 / 12;
-    grid-row: 2 / 15;
+    grid-row: 2 / 21;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
@@ -44,7 +44,7 @@
 #box-lastfm {
     background-color: var(--box-color);
     grid-column: 2 / 7;
-    grid-row: 6 / 18;
+    grid-row: 8 / 26;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: left;
@@ -54,14 +54,14 @@
 #box-links {
     background-color: var(--box-color);
     grid-column: 7 / 10;
-    grid-row: 15 / 18;
+    grid-row: 21 / 26;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Positioning context for the pseudo-element */
+    position: relative;
 }
 
 #box-links a {
@@ -99,7 +99,7 @@
 #cv-download {
     background-color: var(--box-color);
     grid-column: 10 / 12;
-    grid-row: 15 / 18;
+    grid-row: 21 / 26;
     border-radius: 0.5rem;
     padding: 1.5rem;
     text-align: center;
@@ -257,9 +257,63 @@ body {
 #music-stats {
     background-color: var(--box-color);
     border-radius: 0.5rem;
-    padding: 0.75rem;
+    padding: 1.25rem;
     text-align: left;
     margin-bottom: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.25rem;
+}
+
+#music-stats > div {
+    margin-bottom: 0.5rem;
+}
+
+#recent-track {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 1rem;
+}
+
+#recent-track img {
+    width: 47px !important;
+    height: 47px !important;
+    margin-right: 10px !important;
+}
+
+#recent-track h4 {
+    font-size: 1.15em !important;
+    margin-bottom: 8px !important;
+}
+
+#recent-track p {
+    font-size: 1.1em !important;
+}
+
+#recent-track p:last-child {
+    font-size: 0.9em !important;
+    margin-top: 3px !important;
+}
+
+#top-track {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#top-album {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#top-artist {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#random-recommendation {
+    grid-column: 2;
+    grid-row: 3;
 }
 
 #music-stats h3 {
@@ -274,10 +328,10 @@ body {
 }
 
 #music-stats img {
-    border-radius: 50%;
+    border-radius: 8px;
     margin-bottom: 0.25rem;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 #playsChart {
@@ -426,12 +480,6 @@ body {
 
 .link-icon i {
     font-size: 1.2rem; /* Adjust icon size */
-}
-
-#random-recommendation {
-    margin-top: 0.25rem;
-    padding-top: 0.25rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
