@@ -1,12 +1,16 @@
-const fs = require('fs');
 const axios = require('axios');
+require('dotenv').config();
 
-const API_KEY = '974fb2e0a3add0ac42c2729f6c1e854a';
-const USERNAME = 'syntiiix';
+// Use environment variables with fallbacks
+const API_KEY = process.env.LASTFM_API_KEY || '974fb2e0a3add0ac42c2729f6c1e854a';
+const USERNAME = process.env.LASTFM_USERNAME || 'syntiiix';
 const OUTPUT_FILE = 'last_week_tracks.json';
 const LIMIT = 200; // Max tracks per request
 const DAYS = 7; // Number of days to fetch
 const DELAY = 1000; // Delay in milliseconds between requests
+
+// Store tracks in memory
+let lastWeekTracks = [];
 
 async function fetchLastWeekTracks() {
     const allTracks = [];
@@ -65,14 +69,21 @@ async function fetchLastWeekTracks() {
         }
     }
 
-    // Save all tracks to a JSON file
-    try {
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allTracks, null, 2));
-        console.log(`Fetched ${allTracks.length} tracks from the last week.`);
-    } catch (error) {
-        console.error('Error writing to file:', error);
-    }
+    // Store tracks in memory
+    lastWeekTracks = allTracks;
+    console.log(`Fetched ${allTracks.length} tracks from the last week.`);
+    return allTracks;
 }
 
-// Run the function
-fetchLastWeekTracks();
+// Export functions and data
+module.exports = {
+    fetchLastWeekTracks,
+    getLastWeekTracks: () => lastWeekTracks,
+    startWeeklyFetch: () => {
+        // Fetch tracks once a day
+        setInterval(fetchLastWeekTracks, 24 * 60 * 60 * 1000);
+        
+        // Initial fetch
+        return fetchLastWeekTracks();
+    }
+};

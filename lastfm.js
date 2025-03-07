@@ -1,9 +1,12 @@
-const fs = require('fs');
 const axios = require('axios');
+require('dotenv').config();
 
-const API_KEY = '974fb2e0a3add0ac42c2729f6c1e854a';
-const USERNAME = 'syntiiix';
-const OUTPUT_FILE = 'recent_tracks.json';
+// Use environment variables with fallbacks
+const API_KEY = process.env.LASTFM_API_KEY || '974fb2e0a3add0ac42c2729f6c1e854a';
+const USERNAME = process.env.LASTFM_USERNAME || 'syntiiix';
+
+// Store tracks in memory instead of writing to a file
+let cachedTracks = [];
 
 async function fetchRecentTracks() {
     try {
@@ -18,24 +21,24 @@ async function fetchRecentTracks() {
         });
 
         const tracks = response.data.recenttracks.track;
-        saveTracksToFile(tracks);
+        cachedTracks = tracks; // Store in memory
+        console.log(`Fetched ${tracks.length} recent tracks from Last.fm`);
+        return tracks;
     } catch (error) {
         console.error('Error fetching recent tracks:', error);
+        return [];
     }
 }
 
-function saveTracksToFile(tracks) {
-    fs.writeFile(OUTPUT_FILE, JSON.stringify(tracks, null, 2), (err) => {
-        if (err) {
-            console.error('Error saving tracks to file:', err);
-        } else {
-            console.log('Recent tracks saved to', OUTPUT_FILE);
-        }
-    });
-}
-
-// Fetch tracks every hour
-setInterval(fetchRecentTracks, 60 * 60 * 1000);
-
-// Initial fetch
-fetchRecentTracks(); 
+// Export functions and data for use in server.js
+module.exports = {
+    fetchRecentTracks,
+    getCachedTracks: () => cachedTracks,
+    startFetchInterval: () => {
+        // Fetch tracks every hour
+        setInterval(fetchRecentTracks, 60 * 60 * 1000);
+        
+        // Initial fetch
+        return fetchRecentTracks();
+    }
+}; 

@@ -3,6 +3,10 @@ const path = require('path');
 const fetch = require('node-fetch');
 require('dotenv').config();
 
+// Import our lastfm modules
+const lastfm = require('./lastfm');
+const lastWeekData = require('./fetch_last_week_data');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -35,7 +39,29 @@ app.get('/api/lastfm/:method', async (req, res) => {
   }
 });
 
+// New endpoint to serve recent tracks from memory
+app.get('/recent_tracks.json', (req, res) => {
+  const tracks = lastfm.getCachedTracks();
+  res.json(tracks);
+});
+
+// New endpoint to serve last week's tracks from memory
+app.get('/last_week_tracks.json', (req, res) => {
+  const tracks = lastWeekData.getLastWeekTracks();
+  res.json(tracks);
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  
+  // Start the interval to fetch recent tracks
+  lastfm.startFetchInterval()
+    .then(() => console.log('Initial Last.fm tracks fetch completed'))
+    .catch(err => console.error('Error during initial Last.fm fetch:', err));
+    
+  // Start the interval to fetch last week's tracks
+  lastWeekData.startWeeklyFetch()
+    .then(() => console.log('Initial Last.fm last week tracks fetch completed'))
+    .catch(err => console.error('Error during initial Last.fm last week fetch:', err));
 }); 
