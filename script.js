@@ -224,7 +224,6 @@ async function updateChart() {
                 datasets: [{
                     label: 'Tracks Played',
                     data: chartData.data.map(d => ({ x: d.day, y: d.count })),
-                    backgroundColor: 'rgba(142, 141, 190, 0.4)',
                     borderColor: 'rgba(142, 141, 190, 1)',
                     borderWidth: 2,
                     tension: 0.4,

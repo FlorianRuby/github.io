@@ -63,11 +63,11 @@ async function renderChart() {
         };
 
         const playsChart = new Chart(
-            document.getElementById('playsChart'),
+            document.getElementById('listening-chart'),
             config
         );
         
-        
+        // Add hover effects
         const musicBox = document.getElementById('box-lastfm');
         
         musicBox.addEventListener('mouseenter', () => {
@@ -84,6 +84,5 @@ async function renderChart() {
         console.error('Error rendering chart:', error);
     }
 }
-
 
 renderChart(); 
