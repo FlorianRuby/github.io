@@ -1,0 +1,94 @@
+{
+  "topArtists": [
+    {
+      "name": "Juice WRLD",
+      "playcount": "34667",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
+    },
+    {
+      "name": "d4vd",
+      "playcount": "19656",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
+    },
+    {
+      "name": "Kanye West",
+      "playcount": "4287",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
+    },
+    {
+      "name": "ZZZ",
+      "playcount": "3715",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb14a1956230c54d007d7d8075"
+    },
+    {
+      "name": "T-Low",
+      "playcount": "3012",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb277b7bfff953612e29721019"
+    }
+  ],
+  "topTracks": [
+    {
+      "name": "Doom",
+      "artist": "Juice WRLD",
+      "playcount": "7441",
+      "image": "https://i.scdn.co/image/ab67616d0000b2733011c33da8122f277da3b0e5"
+    },
+    {
+      "name": "The Bridge",
+      "artist": "d4vd",
+      "playcount": "3445",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "Worthless",
+      "artist": "d4vd",
+      "playcount": "3082",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "Don't Forget About Me",
+      "artist": "d4vd",
+      "playcount": "2478",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "DTN",
+      "artist": "d4vd",
+      "playcount": "1910",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b9a4a4ad650b08523df8ec6b"
+    }
+  ],
+  "topAlbums": [
+    {
+      "name": "Petals to Thorns",
+      "artist": "d4vd",
+      "playcount": "9093",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/12f706c62bf69111cd7b33f1a34a592f.jpg"
+    },
+    {
+      "name": "Fighting Demons (Extended Edition)",
+      "artist": "Juice WRLD",
+      "playcount": "6216",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/50a315815e484e29a5459edd04f23c7b.jpg"
+    },
+    {
+      "name": "Legends Never Die",
+      "artist": "Juice WRLD",
+      "playcount": "3846",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/a62dcb0de08359723c940db46c034e71.png"
+    },
+    {
+      "name": "Goodbye & Good Riddance",
+      "artist": "Juice WRLD",
+      "playcount": "3532",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/cb8e41ecc96f769575babd440b81e795.jpg"
+    },
+    {
+      "name": "Fighting Demons (Deluxe)",
+      "artist": "Juice WRLD",
+      "playcount": "2710",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/914613d0191a7d442be4238f3fef6e89.jpg"
+    }
+  ],
+  "lastUpdated": "2025-03-08T18:09:57.057Z"
+}

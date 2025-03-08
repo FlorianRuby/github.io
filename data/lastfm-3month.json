@@ -1,0 +1,94 @@
+{
+  "topArtists": [
+    {
+      "name": "d4vd",
+      "playcount": "2352",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebad447187a35f422307e88ad3"
+    },
+    {
+      "name": "Kanye West",
+      "playcount": "419",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
+    },
+    {
+      "name": "Juice WRLD",
+      "playcount": "301",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
+    },
+    {
+      "name": "JPEGMAFIA",
+      "playcount": "268",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb2341a6c97594cb2d675f4e89"
+    },
+    {
+      "name": "Paris Texas",
+      "playcount": "259",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebcd4785b475935db2fdb9915d"
+    }
+  ],
+  "topTracks": [
+    {
+      "name": "Worthless",
+      "artist": "d4vd",
+      "playcount": "451",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "Leave Her",
+      "artist": "d4vd",
+      "playcount": "449",
+      "image": "https://i.scdn.co/image/ab67616d0000b2739a48777a54e25db0a037db48"
+    },
+    {
+      "name": "The Bridge",
+      "artist": "d4vd",
+      "playcount": "445",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "Don't Forget About Me",
+      "artist": "d4vd",
+      "playcount": "443",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "One More Dance",
+      "artist": "d4vd",
+      "playcount": "197",
+      "image": "https://i.scdn.co/image/ab67616d0000b273a7423a5541412c6387959523"
+    }
+  ],
+  "topAlbums": [
+    {
+      "name": "Petals to Thorns",
+      "artist": "d4vd",
+      "playcount": "1342",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/12f706c62bf69111cd7b33f1a34a592f.jpg"
+    },
+    {
+      "name": "Withering",
+      "artist": "d4vd",
+      "playcount": "453",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/059d02b476b049d21a62dff01462b80f.jpg"
+    },
+    {
+      "name": "One More Dance",
+      "artist": "d4vd",
+      "playcount": "197",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/1b1d95c32cf8508b25eb44072be69ad7.jpg"
+    },
+    {
+      "name": "I LAY DOWN MY LIFE FOR YOU",
+      "artist": "JPEGMAFIA",
+      "playcount": "122",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/de0fbf0601a554a6e1c61226c22f7909.jpg"
+    },
+    {
+      "name": "WASTELAND",
+      "artist": "Brent Faiyaz",
+      "playcount": "87",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/74c7c0622904c1fdf629bc307952ccc4.jpg"
+    }
+  ],
+  "lastUpdated": "2025-03-08T18:09:46.323Z"
+}

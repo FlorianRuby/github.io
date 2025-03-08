@@ -1,0 +1,94 @@
+{
+  "topArtists": [
+    {
+      "name": "Asian Glow",
+      "playcount": "72",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb6359d1df57d6c780a63b0f04"
+    },
+    {
+      "name": "Jean Dawson",
+      "playcount": "71",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb7a164736acce07f0a2291a59"
+    },
+    {
+      "name": "The Kid LAROI",
+      "playcount": "51",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebebf5c408f4d003817161e061"
+    },
+    {
+      "name": "re6ce",
+      "playcount": "32",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb201f3b61faba242c30f75fd6"
+    },
+    {
+      "name": "d4vd",
+      "playcount": "30",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
+    }
+  ],
+  "topTracks": [
+    {
+      "name": "LUVsick!",
+      "artist": "re6ce",
+      "playcount": "15",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b3990b6018998062610de02c"
+    },
+    {
+      "name": "1110011",
+      "artist": "Asian Glow",
+      "playcount": "9",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b883a1854d2b86224dd7098f"
+    },
+    {
+      "name": "Feel All the Time",
+      "artist": "Asian Glow",
+      "playcount": "9",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b883a1854d2b86224dd7098f"
+    },
+    {
+      "name": "m0numental",
+      "artist": "Asian Glow",
+      "playcount": "9",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b883a1854d2b86224dd7098f"
+    },
+    {
+      "name": "The Worst Way to Start an End",
+      "artist": "Asian Glow",
+      "playcount": "9",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b883a1854d2b86224dd7098f"
+    }
+  ],
+  "topAlbums": [
+    {
+      "name": "11100011",
+      "artist": "Asian Glow",
+      "playcount": "70",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/69eb1d0e0dba7268eb80e8ddbf35571a.png"
+    },
+    {
+      "name": "Glimmer Of God",
+      "artist": "Jean Dawson",
+      "playcount": "68",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/a8c14ff110ea2666254f20c54005dbb4.png"
+    },
+    {
+      "name": "F*CK LOVE 3+: OVER YOU",
+      "artist": "The Kid LAROI",
+      "playcount": "34",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/e57e5cafe8c21c8024ab22facaa52ed7.jpg"
+    },
+    {
+      "name": "$OME $EXY $ONGS 4 U",
+      "artist": "PARTYNEXTDOOR",
+      "playcount": "26",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/33e11d750a0e683d10d669456a714292.gif"
+    },
+    {
+      "name": "Ghostholding",
+      "artist": "venturing",
+      "playcount": "23",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/9373642d1f9fc218700f8ff915974988.jpg"
+    }
+  ],
+  "lastUpdated": "2025-03-08T18:09:37.334Z"
+}

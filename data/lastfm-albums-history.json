@@ -1,0 +1,329 @@
+{
+  "albums": [
+    {
+      "name": "They Left Me With The Sword",
+      "artist": "Paris Texas",
+      "date": "2025-03-08",
+      "releaseDate": "2025-02-21",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/d4f0bde9a645a3a34dba90c34da0bc4a.jpg",
+      "totalTracks": 8,
+      "tracksListened": 6,
+      "listenPercentage": 0.75
+    },
+    {
+      "name": "Rarely Do I Dream",
+      "artist": "Youth Lagoon",
+      "date": "2025-03-08",
+      "releaseDate": "2025-02-21",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/af111ad27bca0f6ce24bd7461a1c959f.png",
+      "totalTracks": 12,
+      "tracksListened": 12,
+      "listenPercentage": 1
+    },
+    {
+      "name": "When We Were Younger",
+      "artist": "grentperez",
+      "date": "2025-03-08",
+      "releaseDate": "2023-06-02",
+      "releaseYear": 2023,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/d7fcc6f4c52cdca8d3a2920d13aadf32.jpg",
+      "totalTracks": 7,
+      "tracksListened": 5,
+      "listenPercentage": 0.7142857142857143
+    },
+    {
+      "name": "VANITY",
+      "artist": "Bryant Barnes",
+      "date": "2025-03-08",
+      "releaseDate": "2024-07-26",
+      "releaseYear": 2024,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/cb58aa9331ebd654bed05cadf2f37b18.jpg",
+      "totalTracks": 7,
+      "tracksListened": 7,
+      "listenPercentage": 1
+    },
+    {
+      "name": "CINEMA",
+      "artist": "The Marías",
+      "date": "2025-03-07",
+      "releaseDate": "2021-06-25",
+      "releaseYear": 2021,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/669e4fdc792fffd53f969820325843ac.jpg",
+      "totalTracks": 13,
+      "tracksListened": 13,
+      "listenPercentage": 1
+    },
+    {
+      "name": "11100011",
+      "artist": "Asian Glow",
+      "date": "2025-03-07",
+      "releaseDate": "2025-01-06",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/69eb1d0e0dba7268eb80e8ddbf35571a.png",
+      "totalTracks": 9,
+      "tracksListened": 9,
+      "listenPercentage": 1
+    },
+    {
+      "name": "They Left Me With A Gun",
+      "artist": "Paris Texas",
+      "date": "2025-03-07",
+      "releaseDate": "2025-02-28",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/f55aa71008286b17519ea2ceafc3eb00.jpg",
+      "totalTracks": 6,
+      "tracksListened": 6,
+      "listenPercentage": 1
+    },
+    {
+      "name": "F*CK LOVE 3+: OVER YOU",
+      "artist": "The Kid LAROI",
+      "date": "2025-03-07",
+      "releaseDate": "2021-07-27",
+      "releaseYear": 2021,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/e57e5cafe8c21c8024ab22facaa52ed7.jpg",
+      "totalTracks": 35,
+      "tracksListened": 30,
+      "listenPercentage": 0.8571428571428571
+    },
+    {
+      "name": "Glimmer of God",
+      "artist": "Jean Dawson",
+      "date": "2025-03-07",
+      "releaseDate": "2024-10-18",
+      "releaseYear": 2024,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/a8c14ff110ea2666254f20c54005dbb4.png",
+      "totalTracks": 15,
+      "tracksListened": 15,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Red Hand Akimbo",
+      "artist": "Paris Texas",
+      "date": "2025-03-06",
+      "releaseDate": "2021-10-06",
+      "releaseYear": 2021,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/0370c9b4cf56995ca789936ffaaef18a.jpg",
+      "totalTracks": 5,
+      "tracksListened": 5,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Ghostholding",
+      "artist": "venturing",
+      "date": "2025-03-06",
+      "releaseDate": "2025-02-14",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/9373642d1f9fc218700f8ff915974988.jpg",
+      "totalTracks": 13,
+      "tracksListened": 13,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Found Heaven",
+      "artist": "Conan Gray",
+      "date": "2025-03-06",
+      "releaseDate": "2024-04-05",
+      "releaseYear": 2024,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/1259aa18a5b2f545082843afe8193b80.jpg",
+      "totalTracks": 13,
+      "tracksListened": 13,
+      "listenPercentage": 1
+    },
+    {
+      "name": "For Lovers",
+      "artist": "Lamp",
+      "date": "2025-03-05",
+      "releaseDate": "2004-02-11",
+      "releaseYear": 2004,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/abffc50a1609f36004214895f98372ca.jpg",
+      "totalTracks": 8,
+      "tracksListened": 6,
+      "listenPercentage": 0.75
+    },
+    {
+      "name": "Myths Of The Near Future",
+      "artist": "Klaxons",
+      "date": "2025-03-05",
+      "releaseDate": "2007",
+      "releaseYear": 2007,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/cd899fe3a1934098ac25ee3eed3658c2.png",
+      "totalTracks": 11,
+      "tracksListened": 12,
+      "listenPercentage": 1.0909090909090908
+    },
+    {
+      "name": "Navigator",
+      "artist": "1986 OMEGA TRIBE",
+      "date": "2025-03-04",
+      "releaseDate": "1986-07-23",
+      "releaseYear": 1986,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/a527e4dd0aecc57dd8ce21311a102a9d.jpg",
+      "totalTracks": 9,
+      "tracksListened": 9,
+      "listenPercentage": 1
+    },
+    {
+      "name": "End of the Middle",
+      "artist": "Richard Dawson",
+      "date": "2025-03-04",
+      "releaseDate": "2025-02-14",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/72ecddc3af532f7e800ddc1dc8e407c8.jpg",
+      "totalTracks": 9,
+      "tracksListened": 9,
+      "listenPercentage": 1
+    },
+    {
+      "name": "alone tonight",
+      "artist": "starfall",
+      "date": "2025-03-01",
+      "releaseDate": "2024-04-26",
+      "releaseYear": 2024,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/7ff774334165053497546c46f1b6b70c.jpg",
+      "totalTracks": 6,
+      "tracksListened": 6,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Vespertine",
+      "artist": "Björk",
+      "date": "2025-02-28",
+      "releaseDate": "2001-08-27",
+      "releaseYear": 2001,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/672116cb65de42eface9d5b0b0ddcd74.png",
+      "totalTracks": 12,
+      "tracksListened": 12,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Duke Ellington & John Coltrane",
+      "artist": "Duke Ellington",
+      "date": "2025-02-28",
+      "releaseDate": "1963-02",
+      "releaseYear": 1963,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/c08b372fb39ad5973658bab0726070b2.jpg",
+      "totalTracks": 7,
+      "tracksListened": 7,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Luminescent Creatures",
+      "artist": "Ichiko Aoba",
+      "date": "2025-02-28",
+      "releaseDate": "2025-02-28",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/cb19a0682a359ce37a2121306e3ea71d.jpg",
+      "totalTracks": 11,
+      "tracksListened": 11,
+      "listenPercentage": 1
+    },
+    {
+      "name": "BLACK’!ANTIQUE",
+      "artist": "Pink Siifu",
+      "date": "2025-02-27",
+      "releaseDate": "2025-01-27",
+      "releaseYear": 2025,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/ac0bf34c99fa6ddf8695a6b1b2a795f9.png",
+      "totalTracks": 19,
+      "tracksListened": 19,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Teen Dream",
+      "artist": "Beach House",
+      "date": "2025-02-26",
+      "releaseDate": "2010-01-25",
+      "releaseYear": 2010,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/30d53a1f77170c021ee5ce20f2b82e3e.jpg",
+      "totalTracks": 10,
+      "tracksListened": 10,
+      "listenPercentage": 1
+    },
+    {
+      "name": "to love in the 21st century",
+      "artist": "Lyn Lapid",
+      "date": "2025-02-25",
+      "releaseDate": "2023-06-23",
+      "releaseYear": 2023,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/1731d465dba624576feec939fb729400.jpg",
+      "totalTracks": 10,
+      "tracksListened": 10,
+      "listenPercentage": 1
+    },
+    {
+      "name": "A Love Supreme",
+      "artist": "John Coltrane",
+      "date": "2025-02-24",
+      "releaseDate": "1965-02",
+      "releaseYear": 1965,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/29555acae2ed44eea3882de43a606fd9.png",
+      "totalTracks": 4,
+      "tracksListened": 4,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Surfing The Void",
+      "artist": "Klaxons",
+      "date": "2025-02-22",
+      "releaseDate": "2010-01-01",
+      "releaseYear": 2010,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/8627fa54c15f4ea08d9c9918c78ae2d6.png",
+      "totalTracks": 10,
+      "tracksListened": 9,
+      "listenPercentage": 0.9
+    },
+    {
+      "name": "Selected Ambient Works 85-92",
+      "artist": "Aphex Twin",
+      "date": "2025-02-22",
+      "releaseDate": "1992-02-10",
+      "releaseYear": 1992,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/6f199a67803148cfb2cf2238b8fda0fb.jpg",
+      "totalTracks": 13,
+      "tracksListened": 13,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Skiptracing",
+      "artist": "Mild High Club",
+      "date": "2025-02-21",
+      "releaseDate": "2016-08-26",
+      "releaseYear": 2016,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/ce86d8b4b3705e775b98f1617d23581f.jpg",
+      "totalTracks": 11,
+      "tracksListened": 11,
+      "listenPercentage": 1
+    },
+    {
+      "name": "Ten",
+      "artist": "Pearl Jam",
+      "date": "2025-02-21",
+      "releaseDate": "1991-08-27",
+      "releaseYear": 1991,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/4dfa0959e9534f8dcfd24d5dc5110589.jpg",
+      "totalTracks": 11,
+      "tracksListened": 8,
+      "listenPercentage": 0.7272727272727273
+    },
+    {
+      "name": "Come To Daddy",
+      "artist": "Aphex Twin",
+      "date": "2025-02-20",
+      "releaseDate": "1997-10-06",
+      "releaseYear": 1997,
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/78651fa46c964b57d2a572c6452f03fc.jpg",
+      "totalTracks": 8,
+      "tracksListened": 8,
+      "listenPercentage": 1
+    }
+  ],
+  "lastUpdated": "2025-03-08T18:13:23.543Z",
+  "criteria": {
+    "listenedFrom": 2025,
+    "minTracks": 3,
+    "listenThreshold": 0.7
+  }
+}

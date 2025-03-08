@@ -69,44 +69,38 @@ const mockData = {
   ]
 };
 
-// Enhanced loadMusicData function with robust error handling for Heroku
+// Update loadMusicData to remove the "last updated" notification
 async function loadMusicData(timespan) {
+  console.log(`Loading music data for timespan: ${timespan}`);
+  
   // Show loading state
   document.querySelectorAll('.music-box-content').forEach(box => {
     box.innerHTML = '<div class="music-item-loading">Loading...</div>';
   });
   
   try {
+    // Try to fetch from the static JSON file
     let data = null;
     let usedMockData = false;
     
     try {
-      // Add cache-busting parameter to avoid caching issues
+      // Add cache-busting parameter
       const timestamp = new Date().getTime();
-      const response = await fetch(`/api/lastfm/top?period=${timespan}&_=${timestamp}`, {
-        headers: { 'Cache-Control': 'no-cache' },
-        timeout: 10000 // 10 second timeout
-      });
+      const url = `/data/lastfm-${timespan}.json?_=${timestamp}`;
+      console.log(`Fetching from static file: ${url}`);
+      
+      const response = await fetch(url);
       
       if (!response.ok) {
-        throw new Error(`API returned status ${response.status}`);
+        throw new Error(`Failed to load static data: ${response.status}`);
       }
       
       data = await response.json();
+      console.log('Static data loaded:', data);
       
-      // Check if we got empty data back
-      const hasData = 
-        data.topArtists.length > 0 || 
-        data.topTracks.length > 0 || 
-        data.topAlbums.length > 0;
-        
-      if (!hasData) {
-        console.warn("API returned empty data, using mock data");
-        data = mockData;
-        usedMockData = true;
-      }
+      // Remove the "last updated" notification code from here
     } catch (fetchError) {
-      console.warn("Failed to fetch from API, using mock data:", fetchError);
+      console.warn("Failed to fetch from static file, using mock data:", fetchError);
       data = mockData;
       usedMockData = true;
     }
@@ -135,48 +129,96 @@ async function loadMusicData(timespan) {
   }
 }
 
-// Function to update the display with music data
+// Improved updateMusicDisplay function with cover images
 function updateMusicDisplay(data) {
-  // Update top artist box
+  // Format function for number formatting
+  const formatNumber = (num) => {
+    return parseInt(num).toLocaleString();
+  };
+  
+  // Check if image URL is valid
+  const isValidImageUrl = (url) => {
+    if (!url) return false;
+    if (url.length < 10) return false;
+    if (url.endsWith('/noimage/noimage.png')) return false;
+    if (url.includes('2a96cbd8b46e442fc41c2b86b821562f')) return false; // Last.fm default placeholder
+    return true;
+  };
+  
+  // Default image paths
+  const defaultArtistImage = './assets/default-artist.jpg';
+  const defaultTrackImage = './assets/default-track.jpg';
+  const defaultAlbumImage = './assets/default-album.jpg';
+  
+  // Update top artists box with thumbnails
   if (data.topArtists && data.topArtists.length > 0) {
-    const artist = data.topArtists[0];
+    const artistsList = data.topArtists.slice(0, 5).map(artist => {
+      const imageUrl = isValidImageUrl(artist.image) ? artist.image : defaultArtistImage;
+      return `
+        <div class="music-list-item">
+          <img class="music-thumbnail" src="${imageUrl}" alt="${artist.name}" onerror="this.src='${defaultArtistImage}';">
+          <div class="music-item-text">
+            <span class="play-count">${formatNumber(artist.playcount)} plays</span>
+            <span class="item-separator">-</span>
+            <span class="item-name">${artist.name}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
     document.getElementById('top-artist-box').querySelector('.music-box-content').innerHTML = `
-      <div class="music-item">
-        <img src="${artist.image || './assets/default-artist.jpg'}" alt="${artist.name}" class="music-item-image">
-        <div class="music-item-info">
-          <h5>${artist.name}</h5>
-          <div class="music-item-stats">${artist.playcount} plays</div>
-        </div>
+      <div class="music-list">
+        ${artistsList}
       </div>
     `;
   }
   
-  // Update top track box
+  // Update top tracks box with thumbnails
   if (data.topTracks && data.topTracks.length > 0) {
-    const track = data.topTracks[0];
-    document.getElementById('top-track-box').querySelector('.music-box-content').innerHTML = `
-      <div class="music-item">
-        <img src="${track.image || './assets/default-track.jpg'}" alt="${track.name}" class="music-item-image">
-        <div class="music-item-info">
-          <h5>${track.name}</h5>
-          <p>${track.artist}</p>
-          <div class="music-item-stats">${track.playcount} plays</div>
+    const tracksList = data.topTracks.slice(0, 5).map(track => {
+      const imageUrl = isValidImageUrl(track.image) ? track.image : defaultTrackImage;
+      return `
+        <div class="music-list-item">
+          <img class="music-thumbnail" src="${imageUrl}" alt="${track.name}" onerror="this.src='${defaultTrackImage}';">
+          <div class="music-item-text">
+            <span class="play-count">${formatNumber(track.playcount)} plays</span>
+            <span class="item-separator">-</span>
+            <span class="item-name">${track.name}</span>
+            <span class="item-separator">-</span>
+            <span class="item-artist">${track.artist}</span>
+          </div>
         </div>
+      `;
+    }).join('');
+    
+    document.getElementById('top-track-box').querySelector('.music-box-content').innerHTML = `
+      <div class="music-list">
+        ${tracksList}
       </div>
     `;
   }
   
-  // Update top album box
+  // Update top albums box with thumbnails
   if (data.topAlbums && data.topAlbums.length > 0) {
-    const album = data.topAlbums[0];
-    document.getElementById('top-album-box').querySelector('.music-box-content').innerHTML = `
-      <div class="music-item">
-        <img src="${album.image || './assets/default-album.jpg'}" alt="${album.name}" class="music-item-image">
-        <div class="music-item-info">
-          <h5>${album.name}</h5>
-          <p>${album.artist}</p>
-          <div class="music-item-stats">${album.playcount} plays</div>
+    const albumsList = data.topAlbums.slice(0, 5).map(album => {
+      const imageUrl = isValidImageUrl(album.image) ? album.image : defaultAlbumImage;
+      return `
+        <div class="music-list-item">
+          <img class="music-thumbnail" src="${imageUrl}" alt="${album.name}" onerror="this.src='${defaultAlbumImage}';">
+          <div class="music-item-text">
+            <span class="play-count">${formatNumber(album.playcount)} plays</span>
+            <span class="item-separator">-</span>
+            <span class="item-name">${album.name}</span>
+            <span class="item-separator">-</span>
+            <span class="item-artist">${album.artist}</span>
+          </div>
         </div>
+      `;
+    }).join('');
+    
+    document.getElementById('top-album-box').querySelector('.music-box-content').innerHTML = `
+      <div class="music-list">
+        ${albumsList}
       </div>
     `;
   }

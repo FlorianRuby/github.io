@@ -687,6 +687,7 @@ body {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    margin-left: -1.9rem;
 }
 
 .education-timeline.visible {
@@ -749,6 +750,7 @@ body {
 .timeline-description {
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    margin-right: 2rem;
 }
 
 .timeline-tech {
@@ -756,6 +758,7 @@ body {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.5rem;
+    margin-right: 1.6rem;
 }
 
 .timeline-tech span {
@@ -986,23 +989,26 @@ body {
 }
 
 .music-text-box {
-  background-color: var(--box-color);
-  padding: 2rem;
-  border-radius: 0.5rem;
+  padding-right: 2rem;
   margin-bottom: 1.5rem;
-}
-
-.music-text-box h3 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  color: #333;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  /* Remove border-radius since background is transparent */
+  border-radius: 0;
 }
 
 .music-text-box p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6; /* Match about text line height */
+  position: relative;
+}
+/* Make the first paragraph top margin consistent */
+.music-text-box p:first-child,
+.music-text-box p:first-of-type {
+  margin-top: 0 !important;
 }
 
 /* Input field styles */
@@ -1045,63 +1051,67 @@ body {
 
 .music-box {
   background-color: var(--box-color);
-  padding: 1.5rem;
+  padding: 2rem 1rem 2rem 1rem !important; /* Top and sides padding only */
   border-radius: 0.5rem;
-  flex: 1;
+  margin-bottom: 1rem !important; /* Control spacing between boxes */
+  position: relative; /* For absolute positioning */
+  overflow: visible; /* Allow content to overflow */
+}
+
+/* Target all potential sources of bottom spacing */
+.music-box::after {
+  content: "";
+  display: block;
+  height: 0 !important;
+  clear: both;
+}
+
+/* Target the content container specifically */
+.music-box-content {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 0.3rem;
+}
+
+/* Target the list container */
+.music-list {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Target all list items */
+.music-list-item {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.2 !important; /* Tighten line height */
+}
+
+/* Target the last list item specifically */
+.music-list-item:last-child {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Target all potential elements inside list items */
+.music-list-item * {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Create negative space to counter any default spacing */
+.music-box::before {
+  content: "";
+  display: block;
+  height: 0;
+  margin-bottom: -5px !important;
 }
 
 .music-box h4 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   font-size: 1.1rem;
   color: #333;
 }
 
-.music-box-content {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Timespan selector styles */
-.music-timespan-container {
-  background-color: var(--box-color);
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.music-timespan-container h4 {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.timespan-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.timespan-btn {
-  padding: 0.5rem 1rem;
-  background-color: #f0f0f4;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.timespan-btn:hover {
-  background-color: #e4e4eb;
-}
-
-.timespan-btn.active {
-  background-color: #8E8DBE;
-  color: white;
-  border-color: #8E8DBE;
-}
-
-/* Music box content styles */
 .music-item {
   display: flex;
   align-items: center;
@@ -1135,4 +1145,348 @@ body {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   color: #8E8DBE;
+}
+
+/* Music list styling */
+.music-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.music-list-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 1px 0 0 0 !important; /* Force zero bottom padding */
+  margin-bottom: 0 !important; /* Force zero bottom margin */
+}
+
+.play-count {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.item-separator {
+  margin: 0 5px;
+  color: #888;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.item-artist {
+  color: #888;
+  font-style: italic;
+}
+
+/* Remove this rule that was adding the dash */
+.item-name::after {
+  content: none;
+}
+
+/* Add styles for music thumbnails */
+.music-thumbnail {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.music-item-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Ensure no extra padding at bottom of lists */
+.music-list-item:last-child {
+  padding-bottom: 0; /* Remove padding from last item */
+  margin-bottom: 0; /* Remove margin from last item */
+}
+
+/* Make sure the music box content has no bottom margin */
+.music-box-content {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Apply negative bottom margin to pull content up */
+.music-box-content > :last-child {
+  margin-bottom: -5px; /* Use negative margin to reduce space */
+}
+
+/* Album history grid styles */
+.album-history-container {
+  margin-top: 2rem;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.album-item {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.album-item:hover {
+  transform: scale(1.05);
+}
+
+.album-cover {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-info {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.album-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-artist {
+  color: #888;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.loading-albums, .error-loading, .no-albums {
+  grid-column: 1 / -1;
+  padding: 2rem;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+/* Move albums container higher on the page */
+.albums-2025-container {
+  margin-top: -20px; /* Negative margin to move it up */
+  margin-bottom: 2rem;
+  position: relative;
+  top: -10px;
+}
+
+/* Adjust album grid to match new positioning */
+.album-grid-small {
+  --album-size: 100px;
+  --album-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--album-gap);
+  max-height: 470px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* When hovering over the container, show the scrollbar */
+.albums-2025-container:hover .album-grid-small {
+  scrollbar-color: rgba(142, 141, 190, 0.4) transparent;
+}
+
+/* Initially invisible scrollbar for Webkit */
+.album-grid-small::-webkit-scrollbar {
+  width: 4px;
+}
+
+.album-grid-small::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 12px;
+}
+
+.album-grid-small::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+/* Show scrollbar only on hover for Webkit */
+.albums-2025-container:hover .album-grid-small::-webkit-scrollbar-thumb {
+  background: rgba(142, 141, 190, 0.4);
+}
+
+.albums-2025-container:hover .album-grid-small::-webkit-scrollbar-thumb:hover {
+  background: rgba(142, 141, 190, 0.7);
+}
+
+.album-grid-small .album-item {
+  width: var(--album-size);
+  height: auto;
+  margin-bottom: 16px;
+}
+
+/* Remove spacing between Music header and content */
+#music-section h2 {
+  margin-bottom: 0.5rem; /* Reduce bottom margin of the header */
+}
+
+#music-section .section-content {
+  padding-top: 1rem; /* Reduce top padding of the content container */
+}
+
+.music-container {
+  margin-top: -0.5rem; /* Use negative margin to pull content up */
+}
+
+/* Ensure consistent spacing across sections */
+.section-content {
+  padding-top: 1rem; /* Reduce default top padding for all section content */
+}
+
+/* Create a container for header and timespan */
+.section-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0; /* Remove bottom margin to reduce spacing */
+  padding: 0 2rem;
+}
+
+/* Adjust header positioning to reduce space */
+.section-header-container h2 {
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+  margin-bottom: 0; /* Ensure no bottom margin */
+  margin-left: 0;
+}
+
+/* Reposition and resize timespan container to match other boxes */
+.section-header-container .music-timespan-container {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  width: calc(50% - 1rem); /* Match exactly with music boxes width */
+  background-color: var(--box-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Further reduce spacing for music section specifically */
+#music-section .section-content {
+  padding-top: 0.5rem; /* Reduce top padding even more */
+}
+
+/* Remove any top margin from the first text paragraph */
+.music-text-box p:first-child {
+  margin-top: 0;
+}
+
+/* Adjust the timespan buttons to appear right-aligned */
+.section-header-container .timespan-buttons {
+  justify-content: flex-end;
+}
+
+/* Make header container full width in the grid */
+#music-section .section-header-container {
+  grid-column: 1 / -1;
+}
+
+/* Be even more aggressive with the last child margins/paddings */
+.music-box-content > *:last-child {
+  margin-bottom: -10px !important; /* Increase negative margin */
+}
+
+/* Be explicit about item paddings */
+.item-name, .item-artist, .play-count, .item-separator {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.album-grid-small .album-info {
+  margin-top: 0.3rem; /* Reduced top margin */
+  font-size: 0.7rem; /* Smaller font size */
+  overflow: visible; /* Allow overflow */
+  max-width: var(--album-size); /* Constrain width to match album */
+}
+
+.album-grid-small .album-name {
+  font-weight: 500;
+  white-space: normal;
+  overflow: visible;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0.1rem;
+}
+
+.album-grid-small .album-artist {
+  color: #888;
+  font-style: italic;
+  font-size: 0.65rem;
+  white-space: normal;
+  overflow: visible;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* Improve the timespan button layout */
+.timespan-buttons {
+  display: flex;
+  justify-content: space-between; /* Even spacing between buttons */
+  flex-wrap: wrap;
+  gap: 0.4rem; /* Smaller gap between buttons */
+  margin-top: 0.5rem; /* Space after the heading */
+}
+
+.timespan-btn {
+  flex: 1; /* Make buttons grow evenly */
+  min-width: calc(20% - 0.5rem); /* Ensure 5 buttons fit nicely */
+  padding: 0.4rem 0.2rem; /* Smaller padding */
+  background-color: #f0f0f4;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 0.85rem; /* Slightly smaller text */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.timespan-btn:hover {
+  background-color: #e4e4eb;
+}
+
+.timespan-btn.active {
+  background-color: #8E8DBE;
+  color: white;
+  border-color: #8E8DBE;
+}
+
+/* Make the heading more compact */
+.music-timespan-container h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
 }

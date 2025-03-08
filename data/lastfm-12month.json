@@ -1,0 +1,94 @@
+{
+  "topArtists": [
+    {
+      "name": "d4vd",
+      "playcount": "8613",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
+    },
+    {
+      "name": "Juice WRLD",
+      "playcount": "4424",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb1908e1a8b79abf71d5598944"
+    },
+    {
+      "name": "Kanye West",
+      "playcount": "2690",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
+    },
+    {
+      "name": "Tyler, the Creator",
+      "playcount": "1265",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebdfa2b0c7544a772042a12e52"
+    },
+    {
+      "name": "T-Low",
+      "playcount": "1009",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb277b7bfff953612e29721019"
+    }
+  ],
+  "topTracks": [
+    {
+      "name": "DTN",
+      "artist": "d4vd",
+      "playcount": "1740",
+      "image": "https://i.scdn.co/image/ab67616d0000b273b9a4a4ad650b08523df8ec6b"
+    },
+    {
+      "name": "Worthless",
+      "artist": "d4vd",
+      "playcount": "1155",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    },
+    {
+      "name": "Leave Her",
+      "artist": "d4vd",
+      "playcount": "694",
+      "image": "https://i.scdn.co/image/ab67616d0000b2739a48777a54e25db0a037db48"
+    },
+    {
+      "name": "Dirty Secrets",
+      "artist": "d4vd",
+      "playcount": "553",
+      "image": "https://i.scdn.co/image/ab67616d0000b2732bf27010178c06a8b637ccb5"
+    },
+    {
+      "name": "The Bridge",
+      "artist": "d4vd",
+      "playcount": "547",
+      "image": "https://i.scdn.co/image/ab67616d0000b27364fa1bda999f4fbd2b7c4bb7"
+    }
+  ],
+  "topAlbums": [
+    {
+      "name": "Petals to Thorns",
+      "artist": "d4vd",
+      "playcount": "2369",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/12f706c62bf69111cd7b33f1a34a592f.jpg"
+    },
+    {
+      "name": "DTN",
+      "artist": "d4vd",
+      "playcount": "1740",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/8935f8fd1ff311d3f51699726cbdd938.jpg"
+    },
+    {
+      "name": "Withering",
+      "artist": "d4vd",
+      "playcount": "754",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/059d02b476b049d21a62dff01462b80f.jpg"
+    },
+    {
+      "name": "Chromakopia",
+      "artist": "Tyler, the Creator",
+      "playcount": "721",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/8c0b389bb4cbf522bc5a2b58e15b6620.jpg"
+    },
+    {
+      "name": "Goodbye & Good Riddance",
+      "artist": "Juice WRLD",
+      "playcount": "644",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/cb8e41ecc96f769575babd440b81e795.jpg"
+    }
+  ],
+  "lastUpdated": "2025-03-08T18:09:51.450Z"
+}

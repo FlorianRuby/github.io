@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from the root directory
 app.use(express.static(path.join(__dirname)));
 
+// Serve static data files
+app.use('/data', express.static(path.join(__dirname, 'data')));
+
 // Route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
@@ -258,20 +261,57 @@ app.get('/api/lastfm/top', async (req, res) => {
   }
 });
 
-// Fixed test endpoint with verified method
+// Updated test endpoint to use HTTPS and add more logging
 app.get('/api/lastfm/test', async (req, res) => {
   try {
-    // Use the user.getInfo method which is definitely valid
+    console.log('Testing Last.fm API connection...');
+    console.log(`Using API key: ${LASTFM_API_KEY.slice(0, 4)}...${LASTFM_API_KEY.slice(-4)}`);
+    console.log(`Using username: ${LASTFM_USER}`);
+    
+    // Use HTTPS and the same timeout handling as the main endpoint
     const response = await fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${LASTFM_USER}&api_key=${LASTFM_API_KEY}&format=json`
+      `https://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${LASTFM_USER}&api_key=${LASTFM_API_KEY}&format=json`
     );
     
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Last.fm API returned error status:', response.status, errorText);
+      return res.status(response.status).json({ 
+        error: 'Last.fm API error', 
+        status: response.status,
+        message: errorText
+      });
+    }
+    
     const data = await response.json();
+    console.log('Last.fm API test successful');
     res.json(data);
   } catch (error) {
     console.error('Test API error:', error);
     res.status(500).json({ error: 'Test API failed', details: error.message });
   }
+});
+
+// Add a debug endpoint to verify environment settings (password protected for security)
+app.get('/api/debug/config', (req, res) => {
+  const debugPassword = req.query.key;
+  
+  // Simple security check - you should use a proper auth system in production
+  if (debugPassword !== 'your-temp-debug-password') {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  
+  // Return information about the environment without exposing the full API key
+  res.json({
+    environment: process.env.NODE_ENV || 'development',
+    lastfm_user: LASTFM_USER,
+    lastfm_api_key_preview: LASTFM_API_KEY ? `${LASTFM_API_KEY.slice(0, 4)}...${LASTFM_API_KEY.slice(-4)}` : 'not set',
+    has_api_key: !!LASTFM_API_KEY,
+    port: PORT,
+    node_version: process.version,
+    memory_usage: process.memoryUsage(),
+    uptime: process.uptime()
+  });
 });
 
 // Start the server

@@ -251,7 +251,7 @@
             </div>
 
             <div class="timeline-item">
-              <div class="timeline-title">Kantonschule Baden</div>
+              <div class="timeline-title">Kantonsschule Baden</div>
               <div class="timeline-date">2023 - 2027</div>
               <div class="timeline-description">Focus on business law, finance, and languages.</div>
               <div class="timeline-tech">
@@ -287,31 +287,40 @@
     </section>
 
     <section id="music-section" class="content-section">
-      <h2>Music</h2>
+      <div class="section-header-container">
+        <h2>Music</h2>
+        <div class="music-timespan-container">
+          <h4>Select Time Period</h4>
+          <div class="timespan-buttons">
+            <button class="timespan-btn active" data-timespan="7day">7 Days</button>
+            <button class="timespan-btn" data-timespan="1month">1 Month</button>
+            <button class="timespan-btn" data-timespan="3month">3 Months</button>
+            <button class="timespan-btn" data-timespan="12month">1 Year</button>
+            <button class="timespan-btn" data-timespan="overall">All Time</button>
+          </div>
+        </div>
+      </div>
+      
       <div class="section-content">
         <div class="music-container">
-          <!-- Left side with text and timespan selector -->
+          <!-- Left side with text -->
           <div class="music-info">
             <div class="music-text-box">
-              <h3>My Music Taste</h3>
-              <p>I'm passionate about music discovery and enjoy exploring diverse genres. My collection spans from indie rock to lo-fi beats, with particular interest in underground artists creating unique sounds.</p>
-              <p>Below you can explore my listening statistics across different time periods. The data is pulled directly from my Last.fm account, reflecting my actual listening habits.</p>
+              <p>Music is a huge part of my daily life - I'm constantly exploring new artists and genres, from ambient soundscapes to jazz to experimental hip-hop. My listening habits are diverse and ever-evolving, as I believe every genre has something unique to offer and I'm always open for new stuff. </p>
+              <p>That's why this year I've challenged myself to listen to a new album every single day throughout 2025, pushing the boundaries of my musical comfort zone. You can see some of the albums I've listened to below!</p>
             </div>
             
-            <!-- Timespan selector -->
-            <div class="music-timespan-container">
-              <h4>Select Time Period</h4>
-              <div class="timespan-buttons">
-                <button class="timespan-btn active" data-timespan="7day">7 Days</button>
-                <button class="timespan-btn" data-timespan="1month">1 Month</button>
-                <button class="timespan-btn" data-timespan="3month">3 Months</button>
-                <button class="timespan-btn" data-timespan="12month">1 Year</button>
-                <button class="timespan-btn" data-timespan="overall">All Time</button>
+            <!-- Album history container moved here and renamed -->
+            <div class="album-history-container albums-2025-container">
+              <h4>Albums I've Listened to in 2025</h4>
+              <div class="album-grid album-grid-small" id="album-history-grid" style="--album-size: 100px; --album-gap: 8px;">
+                <div class="loading-albums">Loading album history...</div>
+                <!-- Albums will be added dynamically -->
               </div>
             </div>
           </div>
           
-          <!-- Right side with three stacked boxes -->
+          <!-- Right side with music boxes -->
           <div class="music-boxes">
             <div class="music-box" id="top-artist-box">
               <h4>Top Artist</h4>
@@ -345,5 +354,6 @@
     <script src="chart.js"></script>
     <script src="preview-cards.js"></script>
     <script src="music-stats.js"></script>
+    <script src="album-history.js"></script>
   </body>
 </html>

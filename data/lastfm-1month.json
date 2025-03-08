@@ -1,0 +1,94 @@
+{
+  "topArtists": [
+    {
+      "name": "d4vd",
+      "playcount": "371",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
+    },
+    {
+      "name": "Paris Texas",
+      "playcount": "171",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebf569e0b8305898f5492bf1c5"
+    },
+    {
+      "name": "Kanye West",
+      "playcount": "133",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
+    },
+    {
+      "name": "Juice WRLD",
+      "playcount": "112",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
+    },
+    {
+      "name": "JPEGMAFIA",
+      "playcount": "111",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb2341a6c97594cb2d675f4e89"
+    }
+  ],
+  "topTracks": [
+    {
+      "name": "One More Dance",
+      "artist": "d4vd",
+      "playcount": "197",
+      "image": "https://i.scdn.co/image/ab67616d0000b273a7423a5541412c6387959523"
+    },
+    {
+      "name": "Stripper Song",
+      "artist": "Paris Texas",
+      "playcount": "42",
+      "image": "https://i.scdn.co/image/ab67616d0000b27365abdb8165c31e475b0d8156"
+    },
+    {
+      "name": "blue",
+      "artist": "yung kai",
+      "playcount": "20",
+      "image": "https://i.scdn.co/image/ab67616d0000b273373c63a4666fb7193febc167"
+    },
+    {
+      "name": "Red Eyes & Blue Hearts",
+      "artist": "Paris Texas",
+      "playcount": "15",
+      "image": "https://i.scdn.co/image/ab67616d0000b27399fb3b0502b10bf194a0120a"
+    },
+    {
+      "name": "RHM",
+      "artist": "Paris Texas",
+      "playcount": "15",
+      "image": "https://i.scdn.co/image/ab67616d0000b27380b75f9fa6e1f28c2131287d"
+    }
+  ],
+  "topAlbums": [
+    {
+      "name": "One More Dance",
+      "artist": "d4vd",
+      "playcount": "197",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/1b1d95c32cf8508b25eb44072be69ad7.jpg"
+    },
+    {
+      "name": "11100011",
+      "artist": "Asian Glow",
+      "playcount": "70",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/69eb1d0e0dba7268eb80e8ddbf35571a.png"
+    },
+    {
+      "name": "Glimmer Of God",
+      "artist": "Jean Dawson",
+      "playcount": "68",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/a8c14ff110ea2666254f20c54005dbb4.png"
+    },
+    {
+      "name": "They Left Me With The Sword",
+      "artist": "Paris Texas",
+      "playcount": "52",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/d4f0bde9a645a3a34dba90c34da0bc4a.jpg"
+    },
+    {
+      "name": "I LAY DOWN MY LIFE FOR YOU",
+      "artist": "JPEGMAFIA",
+      "playcount": "48",
+      "image": "https://lastfm.freetls.fastly.net/i/u/300x300/de0fbf0601a554a6e1c61226c22f7909.jpg"
+    }
+  ],
+  "lastUpdated": "2025-03-08T18:09:41.681Z"
+}
