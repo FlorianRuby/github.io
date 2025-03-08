@@ -650,6 +650,7 @@ body {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    align-items: flex-start;
 }
 
 .about-section-content.visible {
@@ -677,8 +678,11 @@ body {
 
 .education-timeline {
     position: relative;
+    top: -90px;
+    margin-bottom: -60px;
     background-color: var(--box-color);
     padding: 2rem;
+    padding-bottom: 3rem;
     border-radius: 0.5rem;
     opacity: 1;
     transform: translateY(0);
@@ -761,7 +765,7 @@ body {
 
 /* Adjust the spacing of the first timeline item to account for the new padding */
 .timeline-item:first-child {
-    margin-top: 0.5rem;
+    margin-top: 0;
 }
 
 /* Adjust the spacing of the last timeline item */
@@ -771,18 +775,22 @@ body {
 
 /* Container for the scrolling tech stack */
 .tech-scroll-container {
-    max-width: 500px;  /* Limit the width to match text better */
+    max-width: 500px;
     overflow: hidden;
     margin-top: 2rem;
     position: relative;
+    /* Adjust mask for more subtle fading edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%);
 }
 
 /* The scrolling wrapper */
 .about-tech-stack {
     display: flex;
-    gap: 2rem;  /* Increased gap between icons */
-    animation: scrollTech 30s linear infinite;  /* Slowed down animation */
+    gap: 2rem;
+    animation: scrollTech 30s linear infinite;
     width: fit-content;
+    padding: 0 2rem;
 }
 
 /* Make the animation smoother */
@@ -852,11 +860,112 @@ body {
     padding-top: 0;
 }
 
-/* Decrease space between section header and content */
+/* Further decrease space between section header and content */
 #about-section h2 {
-    margin-bottom: 20px; /* Reduce the bottom margin of the heading */
+    margin-bottom: 0 !important;
 }
 
 .about-text-content p:first-child {
-    margin-top: 0; /* Remove top margin from first paragraph */
+    margin-top: 0 !important;
+}
+
+/* Social Links Styles - with left-aligned header */
+.social-links-container {
+    margin-top: 3rem;
+    text-align: left; /* Change from center to left */
+}
+
+.social-links-container h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: #333;
+    text-align: left; /* Explicitly set left alignment */
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start; /* Change from center to flex-start */
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background-color: var(--box-color);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-box i {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-box span {
+    font-size: 0.9rem;
+}
+
+.social-box:hover {
+    transform: translateY(-5px);
+    background-color: #c9c9d1;
+}
+
+/* Special colors for different social platforms on hover */
+.social-box:hover i.fa-github {
+    color: #333;
+}
+
+.social-box:hover i.fa-linkedin {
+    color: #0077b5;
+}
+
+.social-box:hover i.fa-envelope {
+    color: #d54b3d;
+}
+
+/* Add Discord hover color */
+.social-box:hover i.fa-discord {
+    color: #5865F2; /* Discord brand color */
+}
+
+/* Remove Twitter hover color since we're not using it anymore */
+.social-box:hover i.fa-twitter {
+    color: #1da1f2;
+}
+
+/* Ensure consistent spacing between heading and content at all screen sizes */
+
+.section-content-about {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Target the first element in the about text section directly */
+.about-text-content p:first-of-type {
+    margin-top: 0 !important;
+}
+
+/* Add more specific rule for large screens to override any responsive settings */
+@media screen and (min-width: 1200px) {
+    #about-section h2 {
+        margin-bottom: 0 !important;
+    }
+    
+    .about-text-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Force first paragraph to have no top margin */
+    .about-text-content p:first-child,
+    .about-text-content p:first-of-type {
+        margin-top: 0 !important;
+    }
 }
