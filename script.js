@@ -1,8 +1,5 @@
 const cursor = document.querySelector('.custom-cursor');
 const clickableElements = document.querySelectorAll('a, .box');
-const projects = document.querySelectorAll('.project');
-const previewImage = document.getElementById('preview-image');
-const previewWindow = document.querySelector('.preview-window');
 
 // Update cursor position
 document.addEventListener('mousemove', (e) => {
@@ -82,6 +79,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Artist image mapping with working image URL for d4vd
+const artistImages = {
+    'd4vd': './assets/cover/Leave Her.jpg', // Using local asset from playlist
+    // Add more artists as needed
+};
+
+// Function to fetch artist image from MusicBrainz
+async function fetchArtistImageFromMusicBrainz(artistName) {
+    try {
+        // First get the MusicBrainz ID (mbid) from Last.fm
+        const lastfmResponse = await fetch(`/api/lastfm/artist.getinfo?artist=${encodeURIComponent(artistName)}`);
+        const lastfmData = await lastfmResponse.json();
+        const mbid = lastfmData.artist?.mbid;
+        
+        if (!mbid) {
+            console.log('No MusicBrainz ID found for', artistName);
+            return null;
+        }
+        
+        // Then fetch artist data from MusicBrainz
+        const url = `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json`;
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        // Look for image relations
+        const relations = data.relations || [];
+        for (let i = 0; i < relations.length; i++) {
+            if (relations[i].type === 'image') {
+                let imageUrl = relations[i].url.resource;
+                
+                // Handle Wikimedia Commons URLs
+                if (imageUrl.startsWith('https://commons.wikimedia.org/wiki/File:')) {
+                    const filename = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
+                    imageUrl = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/' + filename;
+                }
+                
+                console.log('Found artist image:', imageUrl);
+                return imageUrl;
+            }
+        }
+        
+        return null;
+    } catch (error) {
+        console.error('Error fetching artist image:', error);
+        return null;
+    }
+}
+
 // Fetch and display music stats
 async function displayMusicStats() {
     try {
@@ -97,11 +142,11 @@ async function displayMusicStats() {
 
         // Display the most recent track with cover image next to the song name
         document.getElementById('recent-track').innerHTML = `
-            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Most Recent Track</h4>
+            <h4 style="font-size: 0.95em; margin-bottom: 8px;">Most Recent Track</h4>
             <div style="display: flex; align-items: center;">
                 <img src="${recentTrack.image[2]['#text'] || './assets/default-album.png'}" alt="${recentTrack.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p style="font-size: 0.85em; margin: 0;">${recentTrack.name}</p>
+                    <p style="font-size: 0.90em; margin: 0;">${recentTrack.name}</p>
                     <p style="margin: 0; font-size: 0.75em;">by ${recentTrack.artist['#text']}</p>
                 </div>
             </div>
@@ -113,24 +158,32 @@ async function displayMusicStats() {
 
         // Display top track
         document.getElementById('top-track').innerHTML = `
-            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Top Track This Month</h4>
+            <h4 style="font-size: 0.95em; margin-bottom: 8px;">Top Track This Month</h4>
             <div style="display: flex; align-items: center;">
                 <img src="${monthlyStats.topTrack.image || './assets/default-album.png'}" alt="${monthlyStats.topTrack.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p style="font-size: 0.85em; margin: 0;">${monthlyStats.topTrack.name}</p>
+                    <p style="font-size: 0.90em; margin: 0;">${monthlyStats.topTrack.name}</p>
                     <p style="margin: 0; font-size: 0.75em;">by ${monthlyStats.topTrack.artist}</p>
                     <p style="margin: 0; font-size: 0.7em; color: #666;">${monthlyStats.topTrack.plays} plays</p>
                 </div>
             </div>
         `;
 
-        // Display top artist
+        // For top artist, try to get image from MusicBrainz
+        let artistImageUrl = artistImages[monthlyStats.topArtist.name]; // Try from mapping first
+        
+        if (!artistImageUrl) {
+            // If not in mapping, try MusicBrainz
+            const mbImage = await fetchArtistImageFromMusicBrainz(monthlyStats.topArtist.name);
+            artistImageUrl = mbImage || './assets/default-album.png';
+        }
+        
         document.getElementById('top-artist').innerHTML = `
-            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Top Artist This Month</h4>
+            <h4 style="font-size: 0.95em; margin-bottom: 8px;">Top Artist This Month</h4>
             <div style="display: flex; align-items: center;">
-                <img src="${monthlyStats.topArtist.image || './assets/default-album.png'}" alt="${monthlyStats.topArtist.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
+                <img src="${artistImageUrl}" alt="${monthlyStats.topArtist.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p style="font-size: 0.85em; margin: 0;">${monthlyStats.topArtist.name}</p>
+                    <p style="font-size: 1em; margin: 0;">${monthlyStats.topArtist.name}</p>
                     <p style="margin: 0; font-size: 0.7em; color: #666;">${monthlyStats.topArtist.plays} plays</p>
                 </div>
             </div>
@@ -138,11 +191,11 @@ async function displayMusicStats() {
 
         // Display top album
         document.getElementById('top-album').innerHTML = `
-            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Top Album This Month</h4>
+            <h4 style="font-size: 0.95em; margin-bottom: 8px;">Top Album This Month</h4>
             <div style="display: flex; align-items: center;">
                 <img src="${monthlyStats.topAlbum.image || './assets/default-album.png'}" alt="${monthlyStats.topAlbum.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p style="font-size: 0.85em; margin: 0;">${monthlyStats.topAlbum.name}</p>
+                    <p style="font-size: 0.90em; margin: 0;">${monthlyStats.topAlbum.name}</p>
                     <p style="margin: 0; font-size: 0.75em;">by ${monthlyStats.topAlbum.artist}</p>
                     <p style="margin: 0; font-size: 0.7em; color: #666;">${monthlyStats.topAlbum.plays} plays</p>
                 </div>
@@ -239,11 +292,11 @@ async function displayRandomRecommendation() {
 
         // Display the random recommendation
         document.getElementById('random-recommendation').innerHTML = `
-            <h4 style="font-size: 0.9em; margin-bottom: 8px;">Random Recommendation</h4>
+            <h4 style="font-size: 0.95em; margin-bottom: 8px;">Random Recommendation</h4>
             <div style="display: flex; align-items: center;">
                 <img src="${randomTrack.image}" alt="${randomTrack.name}" style="border-radius: 8px; width: 40px; height: 40px; margin-right: 8px;">
                 <div>
-                    <p style="font-size: 0.85em; margin: 0;">${randomTrack.name}</p>
+                    <p style="font-size: 0.90em; margin: 0;">${randomTrack.name}</p>
                     <p style="margin: 0; font-size: 0.75em;">by ${randomTrack.artist}</p>
                 </div>
             </div>
@@ -362,57 +415,4 @@ async function updateChart() {
 // Call all functions when the page loads
 displayMusicStats();
 displayRandomRecommendation();
-updateChart();
-
-// Function to position the preview window
-function positionPreviewWindow(event) {
-    const { clientX, clientY } = event;
-    const offsetX = 10;
-    const offsetY = 20;
-
-    // Get the links container element from the current project
-    const linksContainer = event.currentTarget.querySelector('.project-links');
-    if (linksContainer) {
-        const linksRect = linksContainer.getBoundingClientRect();
-        
-        // Calculate distance from cursor to links container
-        const inLinksArea = 
-            clientX >= linksRect.left - 110 &&
-            clientX <= linksRect.right + 50 &&
-            clientY >= linksRect.top - 100 &&
-            clientY <= linksRect.bottom + 100;
-
-        // Hide preview and show cursor if within links area
-        if (inLinksArea) {
-            previewWindow.style.display = 'none';
-            document.body.classList.remove('hide-cursor');
-            return;
-        }
-    }
-
-    // Show preview window and hide cursor
-    document.body.classList.add('hide-cursor');
-    previewWindow.style.display = 'block';
-    previewWindow.style.left = `${clientX - offsetX}px`;
-    previewWindow.style.top = `${clientY + offsetY}px`;
-}
-
-// Update project event listeners to remove cursor management
-projects.forEach((project) => {
-    project.addEventListener('mouseenter', (event) => {
-        const imagePath = project.getAttribute('data-preview');
-        previewImage.src = imagePath;
-        previewImage.classList.add('visible');
-        positionPreviewWindow(event);
-    });
-
-    project.addEventListener('mousemove', (event) => {
-        positionPreviewWindow(event);
-    });
-
-    project.addEventListener('mouseleave', () => {
-        document.body.classList.remove('hide-cursor');
-        previewImage.classList.remove('visible');
-        previewWindow.style.display = 'none';
-    });
-}); 
+updateChart(); 

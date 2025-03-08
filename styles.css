@@ -14,7 +14,7 @@
 #content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(32, 1fr);
+    grid-template-rows: repeat(26, 1fr);
     gap: 1.5rem;
     padding: 2rem 2rem 4rem 2rem;
     max-width: 1400px;
@@ -189,8 +189,9 @@ body {
     grid-column: 1 / -1;
     font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
+    margin-bottom: 0rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
     color: #333;
 }
 
@@ -382,7 +383,6 @@ body {
 
 #music-stats h4 {
     margin: 0.25rem 0 0.115rem;
-    font-size: 1rem;
 }
 
 #music-stats img {
@@ -839,3 +839,24 @@ body {
 .timeline-item:nth-child(3) { transition-delay: 0.7s; }
 .timeline-item:nth-child(4) { transition-delay: 0.8s; }
 .timeline-item:nth-child(5) { transition-delay: 0.9s; }
+
+
+.section-content-about {
+    grid-column: 1 / -1;
+    background-color: transparent;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 0.5rem;
+    min-height: 60vh;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Decrease space between section header and content */
+#about-section h2 {
+    margin-bottom: 20px; /* Reduce the bottom margin of the heading */
+}
+
+.about-text-content p:first-child {
+    margin-top: 0; /* Remove top margin from first paragraph */
+}
