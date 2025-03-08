@@ -289,6 +289,54 @@
     <section id="music-section" class="content-section">
       <h2>Music</h2>
       <div class="section-content">
+        <div class="music-container">
+          <!-- Left side with text and timespan selector -->
+          <div class="music-info">
+            <div class="music-text-box">
+              <h3>My Music Taste</h3>
+              <p>I'm passionate about music discovery and enjoy exploring diverse genres. My collection spans from indie rock to lo-fi beats, with particular interest in underground artists creating unique sounds.</p>
+              <p>Below you can explore my listening statistics across different time periods. The data is pulled directly from my Last.fm account, reflecting my actual listening habits.</p>
+            </div>
+            
+            <!-- Timespan selector -->
+            <div class="music-timespan-container">
+              <h4>Select Time Period</h4>
+              <div class="timespan-buttons">
+                <button class="timespan-btn active" data-timespan="7day">7 Days</button>
+                <button class="timespan-btn" data-timespan="1month">1 Month</button>
+                <button class="timespan-btn" data-timespan="3month">3 Months</button>
+                <button class="timespan-btn" data-timespan="12month">1 Year</button>
+                <button class="timespan-btn" data-timespan="overall">All Time</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side with three stacked boxes -->
+          <div class="music-boxes">
+            <div class="music-box" id="top-artist-box">
+              <h4>Top Artist</h4>
+              <div class="music-box-content">
+                <div class="music-item-loading">Loading...</div>
+                <!-- Content will be added dynamically -->
+              </div>
+            </div>
+            
+            <div class="music-box" id="top-track-box">
+              <h4>Top Track</h4>
+              <div class="music-box-content">
+                <div class="music-item-loading">Loading...</div>
+                <!-- Content will be added dynamically -->
+              </div>
+            </div>
+            
+            <div class="music-box" id="top-album-box">
+              <h4>Top Album</h4>
+              <div class="music-box-content">
+                <div class="music-item-loading">Loading...</div>
+                <!-- Content will be added dynamically -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -296,5 +344,6 @@
     <script src="script.js"></script>
     <script src="chart.js"></script>
     <script src="preview-cards.js"></script>
+    <script src="music-stats.js"></script>
   </body>
 </html>

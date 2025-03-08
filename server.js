@@ -155,6 +155,125 @@ app.get('/api/lastfm/tracks/chart', async (req, res) => {
   }
 });
 
+// Environment variables for Heroku
+const LASTFM_API_KEY = process.env.LASTFM_API_KEY || '974fb2e0a3add0ac42c2729f6c1e854a';
+const LASTFM_USER = process.env.LASTFM_USER || 'syntiiix';
+
+// Last.fm top stats endpoint - Heroku optimized
+app.get('/api/lastfm/top', async (req, res) => {
+  try {
+    const period = req.query.period || '7day';
+    
+    // Heroku-friendly fetch with timeout
+    const fetchWithTimeout = async (url, timeout = 8000) => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeout);
+      
+      try {
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        return response;
+      } catch (error) {
+        clearTimeout(timeoutId);
+        throw error;
+      }
+    };
+    
+    // Process API responses with better error handling
+    let artistsData = [], tracksData = [], albumsData = [];
+    
+    try {
+      const artistsResponse = await fetchWithTimeout(
+        `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=${LASTFM_USER}&period=${period}&api_key=${LASTFM_API_KEY}&format=json&limit=10`
+      );
+      
+      if (artistsResponse.ok) {
+        const artists = await artistsResponse.json();
+        if (artists.topartists && artists.topartists.artist) {
+          artistsData = artists.topartists.artist.map(artist => ({
+            name: artist.name,
+            playcount: artist.playcount,
+            image: artist.image[3]['#text'] || artist.image[2]['#text'] || null
+          }));
+        }
+      }
+    } catch (e) {
+      console.error('Error fetching top artists:', e);
+    }
+    
+    try {
+      const tracksResponse = await fetchWithTimeout(
+        `https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${LASTFM_USER}&period=${period}&api_key=${LASTFM_API_KEY}&format=json&limit=10`
+      );
+      
+      if (tracksResponse.ok) {
+        const tracks = await tracksResponse.json();
+        if (tracks.toptracks && tracks.toptracks.track) {
+          tracksData = tracks.toptracks.track.map(track => ({
+            name: track.name,
+            artist: track.artist.name,
+            playcount: track.playcount,
+            image: track.image[3]['#text'] || track.image[2]['#text'] || null
+          }));
+        }
+      }
+    } catch (e) {
+      console.error('Error fetching top tracks:', e);
+    }
+    
+    try {
+      const albumsResponse = await fetchWithTimeout(
+        `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${LASTFM_USER}&period=${period}&api_key=${LASTFM_API_KEY}&format=json&limit=10`
+      );
+      
+      if (albumsResponse.ok) {
+        const albums = await albumsResponse.json();
+        if (albums.topalbums && albums.topalbums.album) {
+          albumsData = albums.topalbums.album.map(album => ({
+            name: album.name,
+            artist: album.artist.name,
+            playcount: album.playcount,
+            image: album.image[3]['#text'] || album.image[2]['#text'] || null
+          }));
+        }
+      }
+    } catch (e) {
+      console.error('Error fetching top albums:', e);
+    }
+    
+    const topData = {
+      topArtists: artistsData,
+      topTracks: tracksData,
+      topAlbums: albumsData
+    };
+    
+    res.json(topData);
+  } catch (error) {
+    console.error('Error fetching Last.fm data:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch Last.fm data', 
+      details: error.message,
+      note: 'If deploying to Heroku, make sure to set LASTFM_API_KEY and LASTFM_USER environment variables' 
+    });
+  }
+});
+
+// Fixed test endpoint with verified method
+app.get('/api/lastfm/test', async (req, res) => {
+  try {
+    // Use the user.getInfo method which is definitely valid
+    const response = await fetch(
+      `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=${LASTFM_USER}&api_key=${LASTFM_API_KEY}&format=json`
+    );
+    
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error('Test API error:', error);
+    res.status(500).json({ error: 'Test API failed', details: error.message });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
