@@ -78,6 +78,40 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.content-section').forEach((section) => {
         observer.observe(section);
     });
+
+    // Timeline color transition
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const aboutSection = document.querySelector('#about-section');
+    
+    window.addEventListener('scroll', () => {
+        if (!aboutSection) return;
+        
+        const viewportHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        
+        timelineItems.forEach((item) => {
+            const itemRect = item.getBoundingClientRect();
+            const itemTop = itemRect.top;
+            const startTrigger = viewportHeight * 1; // Start transition earlier
+            const endTrigger = viewportHeight * 0.75;   // End transition later
+            
+            if (itemTop <= startTrigger && itemTop >= endTrigger) {
+                // Calculate progress (0 to 1) based on item's position between start and end points
+                const progress = (startTrigger - itemTop) / (startTrigger - endTrigger);
+                
+                // Interpolate from transparent to purple (#8E8DBE)
+                const opacity = progress;
+                item.style.setProperty('--timeline-color', `rgba(142, 141, 190, ${opacity})`);
+                item.style.setProperty('--timeline-opacity', opacity);
+            } else if (itemTop < endTrigger) {
+                item.style.setProperty('--timeline-color', '#8E8DBE'); // Fully purple
+                item.style.setProperty('--timeline-opacity', '1');
+            } else {
+                item.style.setProperty('--timeline-color', 'rgba(142, 141, 190, 0)'); // Fully transparent
+                item.style.setProperty('--timeline-opacity', '0');
+            }
+        });
+    });
 });
 
 // Artist image mapping with working image URL for d4vd
