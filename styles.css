@@ -166,6 +166,13 @@ body {
     font-family: Helvetica, 'Helvetica Neue', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     background-color: var(--background-color);
     scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .box {
@@ -1497,7 +1504,7 @@ body {
 #ascii-clock {
   position: fixed;
   top: 7vh;
-  left: 5vw;
+  left: 6vw;
   font-family: monospace;
   font-size: min(0.6vw, 3.5px);
   color: #333;
@@ -1549,4 +1556,25 @@ body {
 /* Ensure the last section doesn't have excessive bottom margin */
 .content-section:last-of-type {
   margin-bottom: 8rem; /* Provide good spacing at the bottom of the page */
+}
+
+/* Remove scrollbar but keep functionality */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Chrome, Safari and Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+/* Ensure the scrollbar is hidden in all webkit browsers */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
 }

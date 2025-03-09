@@ -1,5 +1,6 @@
 const cursor = document.querySelector('.custom-cursor');
-const clickableElements = document.querySelectorAll('a, .box');
+// Exclude nav-items from the clickable elements selector
+const clickableElements = document.querySelectorAll('a:not(.nav-item), .box');
 
 // Update cursor position
 document.addEventListener('mousemove', (e) => {
@@ -12,8 +13,8 @@ clickableElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
         cursor.classList.add('active');
         
-        // Check if it's an external link
-        if (element.tagName === 'A' && !element.getAttribute('onclick')) {
+        // Check if it's an external link AND NOT a nav item
+        if (element.tagName === 'A' && !element.getAttribute('onclick') && !element.classList.contains('nav-item')) {
             cursor.classList.add('external');
             cursor.classList.remove('internal');
             cursor.setAttribute('data-href', element.getAttribute('href'));
@@ -498,4 +499,80 @@ document.addEventListener('DOMContentLoaded', function() {
       cursor.innerHTML = '';
     });
   }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Navigation highlight functionality
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  // Add click handlers for smooth scrolling
+  navItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      let targetPosition;
+      
+      if (targetId === '#content') {
+        targetPosition = 0; // Scroll to top for home
+      } else {
+        const targetElement = document.querySelector(targetId);
+        targetPosition = targetElement.offsetTop;
+      }
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  function highlightNavigation() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    // Remove active class from all items first
+    navItems.forEach(item => item.classList.remove('active'));
+    
+    // Check if we're at the top (home section)
+    if (scrollY < windowHeight * 0.3) {
+        navItems.forEach(item => {
+            if (item.getAttribute('href') === '#content') {
+                item.classList.add('active');
+            }
+        });
+        return;
+    }
+    
+    // Find the closest section
+    let closestSection = null;
+    let closestDistance = Infinity;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - windowHeight * 0.4;
+        const sectionMiddle = sectionTop + (section.offsetHeight / 2);
+        const distance = Math.abs(scrollY - sectionMiddle);
+        
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = section;
+        }
+    });
+    
+    // Highlight the closest section
+    if (closestSection) {
+        const sectionId = closestSection.getAttribute('id');
+        navItems.forEach(item => {
+            if (item.getAttribute('href') === `#${sectionId}`) {
+                item.classList.add('active');
+            }
+        });
+    }
+  }
+
+  // Initial highlight
+  highlightNavigation();
+
+  // Update highlight on scroll
+  window.addEventListener('scroll', highlightNavigation);
 }); 
