@@ -2,17 +2,17 @@
   "topArtists": [
     {
       "name": "d4vd",
-      "playcount": "8613",
-      "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
+      "playcount": "8612",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebad447187a35f422307e88ad3"
     },
     {
       "name": "Juice WRLD",
-      "playcount": "4424",
-      "image": "https://i.scdn.co/image/ab6761610000e5eb1908e1a8b79abf71d5598944"
+      "playcount": "4420",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
     },
     {
       "name": "Kanye West",
-      "playcount": "2690",
+      "playcount": "2688",
       "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "T-Low",
-      "playcount": "1009",
+      "playcount": "1008",
       "image": "https://i.scdn.co/image/ab6761610000e5eb277b7bfff953612e29721019"
     }
   ],
@@ -86,9 +86,9 @@
     {
       "name": "Goodbye & Good Riddance",
       "artist": "Juice WRLD",
-      "playcount": "644",
+      "playcount": "643",
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/cb8e41ecc96f769575babd440b81e795.jpg"
     }
   ],
-  "lastUpdated": "2025-03-08T18:09:51.450Z"
+  "lastUpdated": "2025-03-09T10:35:21.116Z"
 }

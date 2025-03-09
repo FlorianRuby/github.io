@@ -415,4 +415,87 @@ async function updateChart() {
 // Call all functions when the page loads
 displayMusicStats();
 displayRandomRecommendation();
-updateChart(); 
+updateChart();
+
+// ASCII Clock implementation - exact working code
+document.addEventListener('DOMContentLoaded', function() {
+  const digits = [
+    [" 000 ", "0   0", "0   0", "0   0", " 000 "],
+    ["  1  ", " 11  ", "  1  ", "  1  ", " 111 "],
+    [" 222 ", "2   2", "  22 ", " 2   ", " 2222"],
+    [" 333 ", "    3", "  33 ", "    3", " 333 "],
+    [" 4  4", "4  4 ", " 4444", "    4", "    4"],
+    [" 5555", " 5   ", " 555 ", "    5", " 555 "],
+    [" 666 ", " 6   ", " 666 ", " 6  6", " 666 "],
+    [" 7777", "    7", "   7 ", "  7  ", " 7   "],
+    [" 888 ", "8   8", " 888 ", "8   8", " 888 "],
+    [" 999 ", "9   9", " 999 ", "    9", " 999 "],
+    ["     ", "  *  ", "     ", "  *  ", "     "] // Colon
+  ];
+  
+  function getAsciiTime() {
+    // Create date for Berlin timezone (CEST)
+    const now = new Date();
+    const berlinTime = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Berlin' }));
+    
+    const h = berlinTime.getHours().toString().padStart(2, '0');
+    const m = berlinTime.getMinutes().toString().padStart(2, '0');
+    const s = berlinTime.getSeconds().toString().padStart(2, '0');
+    const timeStr = h + ':' + m + ':' + s;
+    let asciiTime = "";
+    
+    for (let row = 0; row < 5; row++) {
+      for (let char of timeStr) {
+        asciiTime += digits[char === ':' ? 10 : parseInt(char)][row] + "  ";
+      }
+      asciiTime += "\n";
+    }
+    
+    return asciiTime;
+  }
+  
+  function updateClock() {
+    const clockElement = document.getElementById('ascii-clock');
+    if (clockElement) {
+      clockElement.textContent = getAsciiTime();
+    }
+  }
+  
+  // Update every second
+  setInterval(updateClock, 1000);
+  updateClock();
+  
+  // Add hover information for the timezone
+  const clockElement = document.getElementById('ascii-clock');
+  clockElement.setAttribute('data-timezone', 'CEST / BERLIN');
+  clockElement.classList.add('has-info');
+  
+  console.log('ASCII clock initialized with Berlin time');
+});
+
+// Update cursor for clock hover with random city
+document.addEventListener('DOMContentLoaded', function() {
+  const cestCities = [
+    "BERLIN", "PARIS", "ROME", "MADRID", "VIENNA", 
+    "AMSTERDAM", "BRUSSELS", "COPENHAGEN", "WARSAW", "PRAGUE", 
+    "BUDAPEST", "MUNICH", "MILAN", "BARCELONA", "ZURICH", 
+    "GENEVA", "FRANKFURT", "HAMBURG", "LYON", "STOCKHOLM", 
+    "OSLO", "VIENNA", "ZAGREB", "LJUBLJANA", "BRATISLAVA", 
+    "BELGRADE", "BERN", "LUXEMBOURG", "MONACO", "VADUZ"
+  ];
+  
+  const clockElement = document.querySelector('#ascii-clock');
+  if (clockElement) {
+    clockElement.addEventListener('mouseenter', () => {
+      // Get random city
+      const randomCity = cestCities[Math.floor(Math.random() * cestCities.length)];
+      cursor.classList.add('active', 'clock-hover');
+      cursor.innerHTML = `CEST / ${randomCity}`;
+    });
+    
+    clockElement.addEventListener('mouseleave', () => {
+      cursor.classList.remove('active', 'clock-hover');
+      cursor.innerHTML = '';
+    });
+  }
+}); 

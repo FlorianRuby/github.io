@@ -2,27 +2,27 @@
   "topArtists": [
     {
       "name": "d4vd",
-      "playcount": "2352",
-      "image": "https://i.scdn.co/image/ab6761610000e5ebad447187a35f422307e88ad3"
+      "playcount": "2346",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
     },
     {
       "name": "Kanye West",
-      "playcount": "419",
+      "playcount": "416",
       "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
     },
     {
       "name": "Juice WRLD",
-      "playcount": "301",
+      "playcount": "298",
       "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
     },
     {
       "name": "JPEGMAFIA",
-      "playcount": "268",
+      "playcount": "267",
       "image": "https://i.scdn.co/image/ab6761610000e5eb2341a6c97594cb2d675f4e89"
     },
     {
       "name": "Paris Texas",
-      "playcount": "259",
+      "playcount": "258",
       "image": "https://i.scdn.co/image/ab6761610000e5ebcd4785b475935db2fdb9915d"
     }
   ],
@@ -36,7 +36,7 @@
     {
       "name": "Leave Her",
       "artist": "d4vd",
-      "playcount": "449",
+      "playcount": "448",
       "image": "https://i.scdn.co/image/ab67616d0000b2739a48777a54e25db0a037db48"
     },
     {
@@ -68,7 +68,7 @@
     {
       "name": "Withering",
       "artist": "d4vd",
-      "playcount": "453",
+      "playcount": "452",
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/059d02b476b049d21a62dff01462b80f.jpg"
     },
     {
@@ -80,15 +80,15 @@
     {
       "name": "I LAY DOWN MY LIFE FOR YOU",
       "artist": "JPEGMAFIA",
-      "playcount": "122",
+      "playcount": "120",
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/de0fbf0601a554a6e1c61226c22f7909.jpg"
     },
     {
       "name": "WASTELAND",
       "artist": "Brent Faiyaz",
-      "playcount": "87",
+      "playcount": "88",
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/74c7c0622904c1fdf629bc307952ccc4.jpg"
     }
   ],
-  "lastUpdated": "2025-03-08T18:09:46.323Z"
+  "lastUpdated": "2025-03-09T10:35:16.812Z"
 }

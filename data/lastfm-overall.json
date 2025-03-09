@@ -2,7 +2,7 @@
   "topArtists": [
     {
       "name": "Juice WRLD",
-      "playcount": "34667",
+      "playcount": "34668",
       "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "name": "Kanye West",
-      "playcount": "4287",
+      "playcount": "4288",
       "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
     },
     {
@@ -90,5 +90,5 @@
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/914613d0191a7d442be4238f3fef6e89.jpg"
     }
   ],
-  "lastUpdated": "2025-03-08T18:09:57.057Z"
+  "lastUpdated": "2025-03-09T10:35:25.783Z"
 }

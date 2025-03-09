@@ -2,35 +2,35 @@
   "topArtists": [
     {
       "name": "d4vd",
-      "playcount": "371",
+      "playcount": "325",
       "image": "https://i.scdn.co/image/ab6761610000e5ebee632cde061121a5fe48c1d6"
     },
     {
       "name": "Paris Texas",
       "playcount": "171",
-      "image": "https://i.scdn.co/image/ab6761610000e5ebf569e0b8305898f5492bf1c5"
+      "image": "https://i.scdn.co/image/ab6761610000e5ebcd4785b475935db2fdb9915d"
     },
     {
       "name": "Kanye West",
-      "playcount": "133",
+      "playcount": "126",
       "image": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a"
     },
     {
-      "name": "Juice WRLD",
-      "playcount": "112",
-      "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
+      "name": "JPEGMAFIA",
+      "playcount": "114",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb2341a6c97594cb2d675f4e89"
     },
     {
-      "name": "JPEGMAFIA",
-      "playcount": "111",
-      "image": "https://i.scdn.co/image/ab6761610000e5eb2341a6c97594cb2d675f4e89"
+      "name": "Juice WRLD",
+      "playcount": "109",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb01ab50f1479f24a42804efd8"
     }
   ],
   "topTracks": [
     {
       "name": "One More Dance",
       "artist": "d4vd",
-      "playcount": "197",
+      "playcount": "154",
       "image": "https://i.scdn.co/image/ab67616d0000b273a7423a5541412c6387959523"
     },
     {
@@ -62,7 +62,7 @@
     {
       "name": "One More Dance",
       "artist": "d4vd",
-      "playcount": "197",
+      "playcount": "154",
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/1b1d95c32cf8508b25eb44072be69ad7.jpg"
     },
     {
@@ -90,5 +90,5 @@
       "image": "https://lastfm.freetls.fastly.net/i/u/300x300/de0fbf0601a554a6e1c61226c22f7909.jpg"
     }
   ],
-  "lastUpdated": "2025-03-08T18:09:41.681Z"
+  "lastUpdated": "2025-03-09T10:35:11.626Z"
 }

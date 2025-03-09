@@ -1,10 +1,6 @@
 {
   "data": [
     {
-      "day": "Sun",
-      "count": 58
-    },
-    {
       "day": "Mon",
       "count": 70
     },
@@ -26,7 +22,11 @@
     },
     {
       "day": "Sat",
-      "count": 121
+      "count": 93
+    },
+    {
+      "day": "Sun",
+      "count": 30
     }
   ]
 }
