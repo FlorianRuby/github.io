@@ -114,35 +114,59 @@ async function updateWeeklyChart() {
         // Fetch up to 3 pages of tracks
         for (let page = 1; page <= 3; page++) {
             console.log(`Fetching page ${page} of weekly tracks...`);
-            const response = await fetch(
-                `http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=${limit}&page=${page}`
-            );
+            try {
+                const response = await fetch(
+                    `http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=${limit}&page=${page}`
+                );
 
-            const data = await response.json();
-            const tracks = data.recenttracks.track;
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-            if (!tracks || tracks.length === 0) break;
+                const data = await response.json();
+                
+                // Check if we have valid data structure
+                if (!data || !data.recenttracks || !data.recenttracks.track) {
+                    console.warn(`No valid track data in page ${page}`);
+                    break;
+                }
 
-            // Filter tracks from the last 7 days
-            const filteredTracks = tracks.filter(track => {
-                if (track.date && track.date['#text']) {
+                const tracks = data.recenttracks.track;
+
+                if (!Array.isArray(tracks) || tracks.length === 0) {
+                    console.log(`No more tracks found on page ${page}`);
+                    break;
+                }
+
+                // Filter tracks from the last 7 days
+                const filteredTracks = tracks.filter(track => {
+                    // Skip currently playing track which has no date
+                    if (!track.date || !track.date['#text']) {
+                        return false;
+                    }
                     const trackDate = Math.floor(new Date(track.date['#text']).getTime() / 1000);
                     return trackDate >= sevenDaysAgo;
+                });
+
+                allTracks.push(...filteredTracks);
+
+                // Check if we've reached tracks older than 7 days
+                const oldestTrack = tracks[tracks.length - 1];
+                if (oldestTrack.date && oldestTrack.date['#text']) {
+                    const oldestDate = Math.floor(new Date(oldestTrack.date['#text']).getTime() / 1000);
+                    if (oldestDate < sevenDaysAgo) {
+                        console.log('Reached tracks older than 7 days');
+                        break;
+                    }
                 }
-                return false;
-            });
 
-            allTracks.push(...filteredTracks);
-
-            // Check if we've reached tracks older than 7 days
-            const oldestTrack = tracks[tracks.length - 1];
-            if (oldestTrack.date && oldestTrack.date['#text']) {
-                const oldestDate = Math.floor(new Date(oldestTrack.date['#text']).getTime() / 1000);
-                if (oldestDate < sevenDaysAgo) break;
+            } catch (fetchError) {
+                console.error(`Error fetching page ${page}:`, fetchError);
+                break;
             }
         }
 
-        // Get the last 7 days in order
+        // Get the last 7 days in order with dates
         const orderedDays = [];
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const today = new Date();
@@ -150,33 +174,43 @@ async function updateWeeklyChart() {
         for (let i = 6; i >= 0; i--) {
             const date = new Date(today);
             date.setDate(today.getDate() - i);
-            orderedDays.push(days[date.getDay()]);
+            orderedDays.push({
+                day: days[date.getDay()],
+                date: date.toISOString().split('T')[0] // Format: YYYY-MM-DD
+            });
         }
 
         // Initialize counts for all days
         const dailyCounts = {};
-        orderedDays.forEach(day => {
-            dailyCounts[day] = 0;
+        orderedDays.forEach(({day, date}) => {
+            dailyCounts[date] = {
+                day,
+                count: 0
+            };
         });
 
         // Count tracks for each day
         allTracks.forEach(track => {
             if (track.date && track.date['#text']) {
                 const trackDate = new Date(track.date['#text']);
-                const dayName = days[trackDate.getDay()];
-                if (dailyCounts.hasOwnProperty(dayName)) {
-                    dailyCounts[dayName]++;
+                const dateKey = trackDate.toISOString().split('T')[0];
+                if (dailyCounts.hasOwnProperty(dateKey)) {
+                    dailyCounts[dateKey].count++;
                 }
             }
         });
 
-        // Convert to array format for the chart, maintaining the order
+        // Convert to array format for the chart
         const chartData = {
-            data: orderedDays.map(day => ({
-                day,
-                count: dailyCounts[day]
+            data: Object.entries(dailyCounts).map(([date, data]) => ({
+                day: data.day,
+                date: date,
+                count: data.count
             }))
         };
+
+        // Sort by date
+        chartData.data.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         // Save to file
         fs.writeFileSync('weekly_chart.json', JSON.stringify(chartData, null, 2));
@@ -184,6 +218,24 @@ async function updateWeeklyChart() {
 
     } catch (error) {
         console.error('Error updating weekly chart:', error);
+        
+        // Create empty chart data if there's an error
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const today = new Date();
+        const chartData = {
+            data: Array.from({length: 7}, (_, i) => {
+                const date = new Date(today);
+                date.setDate(today.getDate() - (6 - i));
+                return {
+                    day: days[date.getDay()],
+                    date: date.toISOString().split('T')[0],
+                    count: 0
+                };
+            })
+        };
+        
+        // Save fallback data
+        fs.writeFileSync('weekly_chart.json', JSON.stringify(chartData, null, 2));
     }
 }
 

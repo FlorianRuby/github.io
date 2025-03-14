@@ -1,32 +1,39 @@
 {
   "data": [
     {
-      "day": "Mon",
-      "count": 70
-    },
-    {
-      "day": "Tue",
-      "count": 124
-    },
-    {
-      "day": "Wed",
-      "count": 95
-    },
-    {
-      "day": "Thu",
-      "count": 105
-    },
-    {
-      "day": "Fri",
-      "count": 129
-    },
-    {
       "day": "Sat",
+      "date": "2025-03-08",
       "count": 93
     },
     {
       "day": "Sun",
-      "count": 33
+      "date": "2025-03-09",
+      "count": 39
+    },
+    {
+      "day": "Mon",
+      "date": "2025-03-10",
+      "count": 64
+    },
+    {
+      "day": "Tue",
+      "date": "2025-03-11",
+      "count": 99
+    },
+    {
+      "day": "Wed",
+      "date": "2025-03-12",
+      "count": 129
+    },
+    {
+      "day": "Thu",
+      "date": "2025-03-13",
+      "count": 68
+    },
+    {
+      "day": "Fri",
+      "date": "2025-03-14",
+      "count": 82
     }
   ]
 }
