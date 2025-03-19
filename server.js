@@ -12,6 +12,9 @@ app.use(express.static(path.join(__dirname)));
 // Serve static data files
 app.use('/data', express.static(path.join(__dirname, 'data')));
 
+// Add this line to serve files from the assets directory
+app.use('/assets', express.static('assets'));
+
 // Route for the home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
