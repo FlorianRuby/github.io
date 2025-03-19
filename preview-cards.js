@@ -1,5 +1,7 @@
+// Preview cards in the projects section
+
 // Debug flag - set to true to show console logs
-const DEBUG = true;
+const DEBUG = false;
 
 // Basic variables
 let mouseX = 0;

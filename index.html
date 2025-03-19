@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=1.0" />
     <title>Reazn's Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="styles/nav.css">
@@ -19,7 +24,6 @@
       <div id="box-about" class="box" onclick="scrollToSection('about-section')">
         <h1><img src="https://em-content.zobj.net/source/apple/354/waving-hand_1f44b.png" class="wave" alt="👋"> Hi I'm <span class="gradient-text">Reazn</span></h1>
         <p class="about-text">I'm a 17 year old computer science student and avid music enjoyer. <br>I love creating websites for personal use and experimenting with new technologies. <br> <br>I especially enjoy visualizing data and tracking things, like music stats from <a href="https://www.last.fm/user/syntiiix" target="_blank">Last.fm</a>.
-
           <br><br> In my spare time I dabble in photography, graphic design and editing.</p>
         <div class="tech-stack">
           <a href="https://www.python.org" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python"></a>
@@ -172,8 +176,8 @@
               and has evolved to include full-stack development and various programming languages.
             </p>
             <p>
-              When I'm not coding, you'll find me discovering new music, taking photos, or working on graphic design projects.
-              I'm particularly interested in web design, data visualization, and creating tools that make information more accessible and engaging. </p>
+              When I'm not coding, you'll find me discovering new music, taking photos, working on graphic design projects or studying Chinese.
+              I'm particularly interested in web design, data visualization, and creating tools that make information more accessible. </p>
             <p>
                 Recently, I've also become interested in AI and machine learning. I've run LLMs on my PC and experimented with their implementations using APIs.
             </p>
@@ -242,7 +246,8 @@
                 <span>HTML</span> •
                 <span>CSS</span> •
                 <span>Docker</span> •
-                <span>AWS</span>
+                <span>AWS</span> •
+                <span>Scrum</span>
               </div>
             </div>
 
@@ -254,9 +259,11 @@
                 <span>Business Law</span> •
                 <span>Law</span> •
                 <span>Finance & Accounting</span> •
+                <span>Math</span> •
                 <span>French</span> •
                 <span>English</span> •
-                <span>German</span>
+                <span>German</span> •
+                <span>Chinese</span>
               </div>
             </div>
 
@@ -306,12 +313,10 @@
               <p>That's why this year I've challenged myself to listen to a new album every single day throughout 2025, pushing the boundaries of my musical comfort zone. You can see some of the albums I've listened to below!</p>
             </div>
             
-            <!-- Album history container moved here and renamed -->
             <div class="album-history-container albums-2025-container">
               <h4>Albums I've Listened to in 2025</h4>
               <div class="album-grid album-grid-small" id="album-history-grid" style="--album-size: 100px; --album-gap: 8px;">
                 <div class="loading-albums">Loading album history...</div>
-                <!-- Albums will be added dynamically -->
               </div>
             </div>
           </div>
@@ -322,7 +327,6 @@
               <h4>Top Artist</h4>
               <div class="music-box-content">
                 <div class="music-item-loading">Loading...</div>
-                <!-- Content will be added dynamically -->
               </div>
             </div>
             
@@ -330,7 +334,6 @@
               <h4>Top Track</h4>
               <div class="music-box-content">
                 <div class="music-item-loading">Loading...</div>
-                <!-- Content will be added dynamically -->
               </div>
             </div>
             
@@ -338,7 +341,6 @@
               <h4>Top Album</h4>
               <div class="music-box-content">
                 <div class="music-item-loading">Loading...</div>
-                <!-- Content will be added dynamically -->
               </div>
             </div>
           </div>
